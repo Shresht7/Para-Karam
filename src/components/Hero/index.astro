@@ -1,0 +1,43 @@
+<section>
+    <div id="hero-container" class="contained">
+        <div id="call-to-action">
+            <p>Answer the call of</p>
+            <p id="highlight">Adventure</p>
+        </div>
+        <div></div>
+    </div>
+</section>
+
+<!-- Photo by <a href="https://unsplash.com/@awbraga?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alex Braga</a> on <a href="https://unsplash.com/photos/a-person-is-parasailing-in-the-blue-sky-_uCIkkXC2ns?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
+
+<style>
+    section {
+        min-height: 100dvh;
+        background-image: url("/background.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    #hero-container {
+        height: 100dvh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #hero-container > div {
+        flex: 1;
+    }
+
+    #call-to-action {
+        text-align: center;
+        color: #333;
+        font-size: 2rem;
+    }
+
+    #highlight {
+        color: whitesmoke;
+        font-size: 5rem;
+    }
+</style>
