@@ -23,11 +23,17 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
+		--container-width: 1280px;
 	}
 
 	html,
 	body {
 		font-family: system-ui, sans-serif;
 		line-height: 1.6;
+	}
+
+	.contained {
+		max-width: var(--container-width);
+		margin: 0 auto;
 	}
 </style>
