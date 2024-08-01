@@ -8,8 +8,10 @@ interface Props {
 const { id, backgroundColor, color } = Astro.props;
 ---
 
-<section id={id} class="contained">
-    <slot />
+<section>
+    <div id={id} class="contained">
+        <slot />
+    </div>
 </section>
 
 <style define:vars={{ backgroundColor, color }}>
