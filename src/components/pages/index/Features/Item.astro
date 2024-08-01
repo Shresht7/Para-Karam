@@ -1,0 +1,37 @@
+---
+// Props
+interface Props {
+    img?: string;
+    alt?: string;
+    text: string;
+}
+const { img, alt, text } = Astro.props;
+---
+
+<li>
+    <div id="image-container">
+        <img src={img} alt={alt} />
+    </div>
+    <div>
+        <p>{text}</p>
+    </div>
+</li>
+
+<style>
+    li {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    #image-container {
+        --size: 100px;
+        background-color: gray;
+        border-radius: 50%;
+        width: var(--size);
+        height: var(--size);
+    }
+</style>
