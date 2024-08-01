@@ -1,12 +1,20 @@
 ---
 // Components
 import Logo from "../Header/Logo.astro";
+import Socials from "./Socials.astro";
 ---
 
 <!-- Photo by <a href="https://unsplash.com/@chrisk91?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Christian J.</a> on <a href="https://unsplash.com/photos/a-person-is-parasailing-in-the-sky-at-sunset-Ejlj69BGyoE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
    -->
 <footer>
-    <div></div>
+    <div id="footer-info">
+        <Logo />
+        <div id="contact-details">
+            <p>Contact Us</p>
+            <p>9988776666</p>
+            <Socials />
+        </div>
+    </div>
     <div id="copyright">© Para-Karam. All Rights Reserved.</div>
 </footer>
 
@@ -24,5 +32,14 @@ import Logo from "../Header/Logo.astro";
     #copyright {
         color: var(--color-white);
         text-align: center;
+    }
+
+    #footer-info {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        padding-inline: 4rem;
     }
 </style>
