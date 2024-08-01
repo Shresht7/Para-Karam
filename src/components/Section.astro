@@ -1,0 +1,21 @@
+---
+// Props
+interface Props {
+    id?: string;
+}
+const { id } = Astro.props;
+---
+
+<section id={id} class="contained">
+    <slot />
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-block: 5rem;
+    }
+</style>

@@ -1,22 +1,21 @@
 ---
 // Components
+import Section from "../../../Section.astro";
 import Slider from "./Slider.astro";
 ---
 
-<section>
-    <div id="activities" class="contained">
-        <div id="title">
-            <div id="left">
-                <h2>Activities</h2>
-                <p>Find your adventure</p>
-            </div>
-            <div id="right">
-                <button>View All</button>
-            </div>
+<Section id="activities">
+    <div id="title">
+        <div id="left">
+            <h2>Activities</h2>
+            <p>Find your adventure</p>
         </div>
-        <Slider />
+        <div id="right">
+            <button>View All</button>
+        </div>
     </div>
-</section>
+    <Slider />
+</Section>
 
 <style>
     #activities {
