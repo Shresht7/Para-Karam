@@ -2,20 +2,24 @@
 // Props
 interface Props {
     id?: string;
+    backgroundColor?: string;
+    color?: string;
 }
-const { id } = Astro.props;
+const { id, backgroundColor, color } = Astro.props;
 ---
 
 <section id={id} class="contained">
     <slot />
 </section>
 
-<style>
+<style define:vars={{ backgroundColor, color }}>
     section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding-block: 5rem;
+        background-color: var(--backgroundColor, white);
+        color: var(--color, black);
     }
 </style>
