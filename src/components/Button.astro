@@ -1,34 +1,45 @@
 ---
 // Props
 interface Props {
+    color?: "white" | "blue";
     variant?: "solid" | "outline";
     size?: "small" | "large";
-    backgroundColor?: string;
-    color?: string;
 }
-const { variant, size, backgroundColor, color } = Astro.props;
+const { size } = Astro.props;
+const variant = Astro.props.variant ?? "solid";
+const color = Astro.props.color ?? "blue";
 ---
 
-<button class:list={[variant, size]}>
+<button type="button" class:list={[color, variant, size]}>
     <slot />
 </button>
 
-<style define:vars={{ backgroundColor, color }}>
+<style>
     button {
         padding: 0.5rem 1rem;
         border-radius: 100px;
     }
 
+    .white {
+        --background-color: var(--color-white);
+        --color: var(--color-black);
+    }
+
+    .blue {
+        --background-color: var(--color-blue);
+        --color: var(--color-white);
+    }
+
     .solid {
-        background-color: var(--backgroundColor, whitesmoke);
-        color: var(--color, black);
-        border: 2px solid var(--backgroundColor, whitesmoke);
+        background-color: var(--background-color);
+        color: var(--color);
+        border: 2px solid var(--background-color);
     }
 
     .outline {
-        background-color: var(--backgroundColor, transparent);
-        color: var(--color, whitesmoke);
-        border: 2px solid var(--color, whitesmoke);
+        background-color: transparent;
+        color: var(--color);
+        border: 2px solid var(--color);
     }
 
     .small {
