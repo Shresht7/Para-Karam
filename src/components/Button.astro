@@ -3,30 +3,32 @@
 interface Props {
     variant?: "solid" | "outline";
     size?: "small" | "large";
+    backgroundColor?: string;
+    color?: string;
 }
-const { variant, size } = Astro.props;
+const { variant, size, backgroundColor, color } = Astro.props;
 ---
 
 <button class:list={[variant, size]}>
     <slot />
 </button>
 
-<style>
+<style define:vars={{ backgroundColor, color }}>
     button {
         padding: 0.5rem 1rem;
         border-radius: 100px;
     }
 
     .solid {
-        background-color: whitesmoke;
-        color: black;
-        border: 2px solid whitesmoke;
+        background-color: var(--backgroundColor, whitesmoke);
+        color: var(--color, black);
+        border: 2px solid var(--backgroundColor, whitesmoke);
     }
 
     .outline {
-        background-color: transparent;
-        color: whitesmoke;
-        border: 2px solid whitesmoke;
+        background-color: var(--backgroundColor, transparent);
+        color: var(--color, whitesmoke);
+        border: 2px solid var(--color, whitesmoke);
     }
 
     .small {
