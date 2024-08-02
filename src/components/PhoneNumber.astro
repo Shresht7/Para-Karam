@@ -1,0 +1,20 @@
+---
+// Props
+interface Props {
+    tel: number;
+    id?: string;
+    classList?: string[];
+}
+const { tel, id, classList } = Astro.props;
+---
+
+<a id={id} href={`tel:${tel}`} class:list={classList}>
+    {tel}
+</a>
+
+<style>
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+</style>

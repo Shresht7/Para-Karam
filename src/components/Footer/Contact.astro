@@ -1,11 +1,14 @@
 ---
 // Components
 import Socials from "./Socials.astro";
+import PhoneNumber from "../PhoneNumber.astro";
 ---
 
 <div id="contact-details">
     <div id="title">Contact Us</div>
-    <div id="number">9988776666</div>
+    <div id="number">
+        <PhoneNumber tel={9988776666} />
+    </div>
     <Socials />
 </div>
 
@@ -15,6 +18,7 @@ import Socials from "./Socials.astro";
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
+        gap: 0.5rem;
     }
 
     #title {
