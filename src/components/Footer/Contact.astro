@@ -1,0 +1,28 @@
+---
+// Components
+import Socials from "./Socials.astro";
+---
+
+<div id="contact-details">
+    <div id="title">Contact Us</div>
+    <div id="number">9988776666</div>
+    <Socials />
+</div>
+
+<style>
+    #contact-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    #title {
+        font-weight: bold;
+    }
+
+    #number {
+        font-weight: bold;
+        font-size: 2rem;
+    }
+</style>
