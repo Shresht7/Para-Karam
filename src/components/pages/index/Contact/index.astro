@@ -3,10 +3,36 @@
 import Section from "../../../Section.astro";
 ---
 
-<Section id="contact">
-    <p>Subscribe to keep in touch</p>
-    <div>
-        <input type="text" />
-        <button>Subscribe</button>
+<Section id="contact" padding="8rem">
+    <div class="container">
+        <p>Ready to embark on a lifetime of adventure?</p>
+        <h2>Contact Us</h2>
+        <div id="contact-details">
+            <div><span class="bold">Mobile: </span>7042065607</div>
+            <div><span class="bold">Email: </span>admin@para-karam.com</div>
+            <div>
+                <span class="bold">Address: </span>309, Shopping Square 1,
+                Sector-D, Sushant Golf City, Lucknow, Uttar Pradesh
+            </div>
+        </div>
     </div>
 </Section>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    #contact-details {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+</style>
