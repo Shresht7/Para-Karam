@@ -8,7 +8,7 @@ import Button from "../../../Button.astro";
         <div id="call-to-action">
             <p>Answer the call of</p>
             <p id="highlight">Adventure</p>
-            <div>
+            <div id="buttons">
                 <Button variant="solid" color="white" size="large"
                     >Book Now!</Button
                 >
@@ -50,5 +50,14 @@ import Button from "../../../Button.astro";
     #highlight {
         color: var(--color-white);
         font-size: 5rem;
+    }
+
+    #buttons {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
     }
 </style>
