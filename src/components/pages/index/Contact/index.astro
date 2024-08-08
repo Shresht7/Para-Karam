@@ -6,17 +6,20 @@ import Map from "../../../Map.astro";
 
 <Section id="contact" padding="8rem">
     <div class="container">
-        <p>Ready to embark on a lifetime of adventure?</p>
+        <p>Ready to embark on an adventure of a lifetime?</p>
         <h2>Contact Us</h2>
-        <div id="contact-details">
-            <div><span class="bold">Mobile: </span>7042065607</div>
-            <div><span class="bold">Email: </span>admin@para-karam.com</div>
-            <div>
-                <span class="bold">Address: </span>309, Shopping Square 1,
-                Sector-D, Sushant Golf City, Lucknow, Uttar Pradesh
+        <div id="contact-main">
+            <Map />
+            <div id="contact-details">
+                <div><h3 class="bold">Mobile:</h3>7042065607</div>
+                <div><h3 class="bold">Email:</h3>admin@para-karam.com</div>
+                <div>
+                    <h3 class="bold">Address:</h3>309, Shopping Square 1, <br />
+                    Sector-D, Sushant Golf City, <br />
+                    Lucknow, Uttar Pradesh
+                </div>
             </div>
         </div>
-        <Map />
     </div>
 </Section>
 
@@ -26,15 +29,26 @@ import Map from "../../../Map.astro";
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 1rem;
     }
 
     .bold {
         font-weight: bold;
     }
 
+    #contact-main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        margin-top: 2rem;
+    }
+
     #contact-details {
         display: flex;
         flex-direction: column;
-        margin-top: 2rem;
+        gap: 2rem;
+        font-size: 1.25em;
     }
 </style>
