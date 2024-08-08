@@ -4,6 +4,9 @@ interface Props {
 	title: string;
 }
 const { title } = Astro.props;
+
+// Styles
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -20,38 +23,3 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
-
-<style is:global>
-	@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
-	:root {
-		--container-width: 1280px;
-
-		--color-white: whitesmoke;
-		--color-blue: #97cbe0;
-	}
-
-	*,
-	*::before,
-	*::after {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
-
-	html,
-	body {
-		font-family: "Maven Pro", system-ui, sans-serif;
-		line-height: 1.6;
-	}
-
-	body {
-		position: relative;
-	}
-
-	.contained {
-		width: 75%;
-		max-width: var(--container-width);
-		margin: 0 auto;
-	}
-</style>
