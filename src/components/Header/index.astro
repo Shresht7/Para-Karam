@@ -19,7 +19,13 @@ import Navigation from "./Navigation.astro";
         width: 100%;
         padding: 1rem 0rem;
         background-color: transparent;
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(40px);
+        transition: backdrop-filter var(--transition-duration);
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.125);
+    }
+
+    header:hover {
+        backdrop-filter: blur(80px);
     }
 
     div {
