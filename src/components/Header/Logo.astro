@@ -1,4 +1,4 @@
-<a href="/" id="logo-container">
+<a href="/" id="logo-container" class="fly-in">
     <img id="logo" src="/favicon.svg" alt="logo" />
     <div id="name">Para-Karam</div>
 </a>
@@ -10,6 +10,11 @@
         justify-content: flex-start;
         align-items: center;
         gap: 1rem;
+        --fly-from: 0 -100px;
+        animation-fill-mode: both;
+        animation-delay: 500ms;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in-out;
     }
 
     #logo-container:hover {
