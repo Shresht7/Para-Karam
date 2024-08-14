@@ -101,3 +101,29 @@
 		max-width: var(--container-width);
 		margin: 0 auto;
 	}
+
+	/* ========== */
+	/* ANIMATIONS */
+	/* ========== */
+
+	@keyframes fly {
+		from {
+			translate: var(--fly-from, 0 20px);
+		}
+
+		to {
+			translate: var(--fly-to, 0 0px);
+		}
+	}
+
+	.fly-in {
+		--fly-from: 0 20px;
+		--fly-to: 0 0px;
+		animation: fly var(--animation-easing, ease-in) var(--animation-duration, 250ms) var(--animation-direction, forwards);
+	}
+
+	.fly-out {
+		--fly-from: 0 0;
+		--fly-to: 0 -20px;
+		animation: fly var(--animation-easing, ease-out) var(--animation-duration, 250ms) var(--animation-direction, forwards);
+	}
