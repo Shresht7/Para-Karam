@@ -9,6 +9,8 @@ import Item from "./Item.astro";
         <Item text="Adventure filled activities" />
         <Item text="Unique and thrilling experiences" />
         <Item text="Specialist Guides" />
+        <Item text="Expand your horizons" />
+        <Item text="Build physical and mental fitness" />
     </ul>
 </Section>
 
@@ -16,8 +18,10 @@ import Item from "./Item.astro";
     ul {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+        row-gap: 6rem;
     }
 
     li {
