@@ -9,8 +9,8 @@ interface Props {
 const { title = "About Us" } = Astro.props;
 ---
 
-<Section padding="6rem" backgroundColor="#333" color="#E3E3E3">
-    <div id="about-us">
+<Section id="about-us" padding="6rem" backgroundColor="#333" color="whitesmoke">
+    <div>
         <h2>{title}</h2>
         <p>
             We are <strong>Para-Karam</strong>, an organization dedicated to
@@ -32,7 +32,7 @@ const { title = "About Us" } = Astro.props;
 </Section>
 
 <style>
-    #about-us {
+    div {
         display: flex;
         flex-direction: column;
         justify-content: center;
