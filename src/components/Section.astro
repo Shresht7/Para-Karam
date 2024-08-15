@@ -9,8 +9,8 @@ interface Props {
 const { id, backgroundColor, color, padding } = Astro.props;
 ---
 
-<section>
-    <div id={id} class="contained">
+<section id={id}>
+    <div class="contained">
         <slot />
     </div>
 </section>
