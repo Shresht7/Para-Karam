@@ -2,28 +2,31 @@
 // Components
 import Section from "../../../Section.astro";
 import Button from "../../../Button.astro";
-import Slider from "./Slider.astro";
+import Grid from "./Grid.astro";
 ---
 
 <Section id="activities">
-    <div id="title">
-        <div id="left">
-            <h2>Activities</h2>
-            <p>Find your adventure</p>
+    <div class="activities">
+        <div id="title">
+            <div id="left">
+                <h2>Activities</h2>
+                <p>Find your adventure</p>
+            </div>
+            <div id="right">
+                <Button>View All</Button>
+            </div>
         </div>
-        <div id="right">
-            <Button>View All</Button>
-        </div>
+        <Grid />
     </div>
-    <Slider />
 </Section>
 
 <style>
-    #activities {
+    .activities {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 4rem;
     }
 
     #title {
