@@ -1,0 +1,75 @@
+---
+// Components
+import Section from "../../Section.astro";
+---
+
+<Section padding="2rem">
+    <div id="team">
+        <div class="member">
+            <h2>Group Captain (Dr.) Sanjay Srivastav (Retd.)</h2>
+            <ul>
+                <li>Alumni of IIM Lucknow</li>
+                <li>Instructor at Indira Gandhi Rashtriya Uran Academy</li>
+                <li>AI and Data-Science Consultant</li>
+            </ul>
+        </div>
+        <div class="member">
+            <h2>Group Captain Ramesh Mishra VM (Retd.)</h2>
+            <ul>
+                <li>
+                    Parachute Jump Instructor: 2485 Jumps from 16 aircrafts and
+                    helicopters
+                </li>
+                <li>
+                    The first person to jump from 30,000 feet AGL with the
+                    indigenous CFF system
+                </li>
+                <li>Adventure Sports Trainer</li>
+            </ul>
+        </div>
+        <div class="member">
+            <h2>Wing Commander Rajneesh Seth (Retd.)</h2>
+            <ul>
+                <li>Businessman</li>
+                <li>Supply Chain Management</li>
+                <li>Quality-Assurance Consultant</li>
+            </ul>
+        </div>
+    </div>
+</Section>
+
+<style>
+    #team {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        color: var(--color-white);
+    }
+
+    .member {
+        flex: 1;
+        height: 70dvh;
+        background-color: #333;
+        border-radius: 8px;
+    }
+
+    h2 {
+        font-size: var(--font-size);
+        padding-block: 1rem;
+        text-align: center;
+    }
+
+    ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding-inline: 1rem;
+        list-style-type: none;
+        text-align: center;
+    }
+</style>
