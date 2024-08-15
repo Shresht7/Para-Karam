@@ -19,7 +19,8 @@
     .grid-item {
         background-color: #333;
         border-radius: 8px;
-        transition: scale var(--transition-duration);
+        transition-property: scale, opacity, filter;
+        transition-duration: var(--transition-duration);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -31,6 +32,11 @@
 
     .grid-item:hover {
         scale: 1.0175;
+    }
+
+    #grid:hover :not(.grid-item:hover) {
+        opacity: 0.8;
+        filter: grayscale(75%);
     }
 
     #grid .top {
