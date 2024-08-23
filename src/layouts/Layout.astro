@@ -1,6 +1,7 @@
 ---
 // Components
 import { ViewTransitions } from "astro:transitions";
+import ScrollProgressBar from "../components/ScrollProgressBar.astro";
 
 // Props
 interface Props {
@@ -28,6 +29,7 @@ import "../styles/global.css";
 	</head>
 
 	<body>
+		<ScrollProgressBar />
 		<slot />
 	</body>
 </html>
