@@ -45,6 +45,13 @@ import Map from "../../../Map.astro";
         margin-top: 2rem;
     }
 
+    @media screen and (width < 480px) {
+        #contact-main {
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+    }
+
     #contact-details {
         display: flex;
         flex-direction: column;
