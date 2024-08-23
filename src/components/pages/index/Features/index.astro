@@ -24,6 +24,14 @@ import Item from "./Item.astro";
         row-gap: 6rem;
     }
 
+    @media screen and (width < 480px) {
+        ul {
+            flex-direction: column;
+            row-gap: 2rem;
+            text-align: center;
+        }
+    }
+
     li {
         list-style: none;
     }

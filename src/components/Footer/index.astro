@@ -38,6 +38,13 @@ import Contact from "./Contact.astro";
         padding: 12rem 4rem;
     }
 
+    @media screen and (width < 480px) {
+        #footer-info {
+            flex-direction: column;
+            gap: 4rem;      
+        }
+    }
+
     #copyright {
         color: var(--color-white);
         text-align: center;
