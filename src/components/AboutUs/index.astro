@@ -9,7 +9,7 @@ interface Props {
 const { title = "About Us" } = Astro.props;
 ---
 
-<Section id="about-us" padding="6rem" backgroundColor="#333" color="whitesmoke">
+<section id="about-us" class="contained">
     <div>
         <h2>{title}</h2>
         <p>
@@ -29,9 +29,19 @@ const { title = "About Us" } = Astro.props;
         </p>
         <a href="/our-team">Our Team <span class="arrow">→</span></a>
     </div>
-</Section>
+</section>
 
 <style>
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-block: 6rem;
+        background-color: #333;
+        color: whitesmoke;
+    }
+
     div {
         display: flex;
         flex-direction: column;
@@ -53,5 +63,11 @@ const { title = "About Us" } = Astro.props;
 
     .arrow {
         font-size: var(--font-size-xl);
+    }
+
+    @media screen and (width < 480px) {
+        div {
+            padding-inline: 2rem;
+        }
     }
 </style>
