@@ -1,4 +1,12 @@
-<nav>
+---
+// Props
+interface Props {
+    hidden?: boolean
+}
+const { hidden = false } = Astro.props;
+---
+
+<nav class:list={{ hidden: 'hidden' }}>
     <li class="fly-in"><a href="/">Home</a></li>
     <li class="fly-in"><a href="/#activities">Activities</a></li>
     <li class="fly-in"><a href="/#contact">Contact Us</a></li>
@@ -16,6 +24,7 @@
 
     @media screen and (width < 480px) {
         nav {
+            display: none;
             flex-direction: column;
             gap: 1rem;
         }
