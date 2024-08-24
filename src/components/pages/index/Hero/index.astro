@@ -9,15 +9,25 @@ import Button from "../../../Button.astro";
             <p>Answer the call of</p>
             <p id="highlight">Adventure</p>
             <div id="buttons">
-                <Button variant="solid" color="white" size="large"
+                <Button id="book-now" variant="solid" color="white" size="large"
                     >Book Now!</Button
                 >
-                <Button variant="outline" size="large">Explore</Button>
+                <Button id="explore" variant="outline" size="large">Explore</Button>
             </div>
         </div>
         <div></div>
     </div>
 </section>
+
+<script>
+    import { navigate } from "astro:transitions/client";
+    
+    let bookNow = document.getElementById("book-now");
+    bookNow?.addEventListener('click', () => navigate("#contact"))
+    
+    let explore = document.getElementById("explore");
+    explore?.addEventListener('click', () => navigate("#about-us"))
+</script>
 
 <!-- Photo by <a href="https://unsplash.com/@awbraga?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alex Braga</a> on <a href="https://unsplash.com/photos/a-person-is-parasailing-in-the-blue-sky-_uCIkkXC2ns?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
 

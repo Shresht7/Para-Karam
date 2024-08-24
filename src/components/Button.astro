@@ -1,16 +1,17 @@
 ---
 // Props
 interface Props {
+    id?: string;
     color?: "white" | "blue";
     variant?: "solid" | "outline";
     size?: "small" | "large";
 }
-const { size } = Astro.props;
+const { id, size } = Astro.props;
 const variant = Astro.props.variant ?? "solid";
 const color = Astro.props.color ?? "blue";
 ---
 
-<button type="button" class:list={[color, variant, size]}>
+<button id={id} type="button" class:list={[color, variant, size]}>
     <slot />
 </button>
 
