@@ -60,4 +60,15 @@ import Button from "../../../Button.astro";
         align-items: center;
         gap: 2rem;
     }
+
+    
+    @media screen and (width < 480px) {
+        section {
+            background-position: 45% 45%;
+        }
+
+        #hero-container > div:last-child {
+            flex: 0;
+        }
+    }
 </style>
