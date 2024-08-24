@@ -49,6 +49,7 @@ import Section from "../../Section.astro";
     }
 
     .member {
+        width: 100%;
         flex: 1;
         height: 70dvh;
         background-color: #333;
@@ -71,5 +72,17 @@ import Section from "../../Section.astro";
         padding-inline: 1rem;
         list-style-type: none;
         text-align: center;
+    }
+
+    @media screen and (width < 480px) {
+        #team {
+            flex-direction: column;
+            padding-inline: 1rem;
+            gap: 1rem;
+        }
+
+        .member {
+            padding-block: 2rem;
+        }
     }
 </style>
