@@ -1,12 +1,10 @@
 ---
-// Components
-import Section from "../Section.astro";
-
 // Props
 interface Props {
     title?: string;
+    showLink?: boolean;
 }
-const { title = "About Us" } = Astro.props;
+const { title = "About Us", showLink = true } = Astro.props;
 ---
 
 <section id="about-us">
@@ -27,17 +25,13 @@ const { title = "About Us" } = Astro.props;
             wish to share our expertise with the young generation and broader
             community.
         </p>
-        <a href="/our-team">Our Team <span class="arrow">→</span></a>
+        {showLink && <a href="/our-team">Read more about our Team <span class="arrow">→</span></a>}
     </div>
 </section>
 
 <style>
     section {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding-block: 6rem;
+        padding-block: 8rem;
         background-color: #333;
         color: whitesmoke;
     }
@@ -59,6 +53,12 @@ const { title = "About Us" } = Astro.props;
         justify-content: center;
         align-items: center;
         gap: 0.25rem;
+		border-bottom: 1px solid var(--color-white);
+        transition:  border-bottom var(--transition-duration);
+    }
+
+    a:hover {
+		border-color: var(--color-blue);
     }
 
     .arrow {
