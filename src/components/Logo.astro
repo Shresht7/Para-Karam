@@ -1,0 +1,49 @@
+---
+// Props
+interface Props {
+    icon?: boolean;
+    text?: boolean;
+    fontSize?: string;
+    iconSize?: string;
+}
+const {
+    icon = true,
+    text = true,
+    iconSize = "48px",
+    fontSize = "2rem",
+} = Astro.props;
+---
+
+<a href="/" id="logo-container" class="fly-in">
+    {icon && <img id="logo" src="/favicon.svg" alt="logo" />}
+    {text && <div id="name">Para-Karam</div>}
+</a>
+
+<style define:vars={{ iconSize, fontSize }}>
+    #logo-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+
+        --fly-from: 0 -100px;
+        animation-delay: 500ms;
+        animation-duration: 500ms;
+    }
+
+    #logo-container:hover {
+        color: white;
+        text-shadow: 0px 0px 1px white;
+    }
+
+    #logo {
+        width: var(--iconSize);
+        height: var(--iconSize);
+        aspect-ratio: 1 / 1;
+    }
+
+    #name {
+        font-size: var(--fontSize);
+    }
+</style>
