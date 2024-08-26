@@ -127,11 +127,17 @@
 	.fly-in {
 		--fly-from: 0 20px;
 		--fly-to: 0 0px;
-		animation: fly var(--animation-easing, ease-in) var(--animation-duration, 250ms) var(--animation-direction, forwards);
+		animation-name: fly;
+		animation-timing-function: ease-out;
+		animation-duration: 250ms;
+		animation-fill-mode: both;
 	}
 
 	.fly-out {
 		--fly-from: 0 0;
 		--fly-to: 0 -20px;
-		animation: fly var(--animation-easing, ease-out) var(--animation-duration, 250ms) var(--animation-direction, forwards);
+		animation-name: fly;
+		animation-timing-function: ease-out;
+		animation-duration: 250ms;
+		animation-fill-mode: both;
 	}
