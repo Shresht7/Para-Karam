@@ -1,20 +1,15 @@
----
-// Props
-interface Props {
-    hidden?: boolean
-}
-const { hidden = false } = Astro.props;
----
-
-<nav class:list={{ hidden: 'hidden' }}>
-    <li class="fly-in"><a href="/">Home</a></li>
-    <li class="fly-in"><a href="/#activities">Activities</a></li>
-    <li class="fly-in"><a href="/#contact">Contact Us</a></li>
-    <li class="fly-in"><a href="/our-team">Our Team</a></li>
+<nav>
+    <ul>
+        <li class="fly-in"><a href="/">Home</a></li>
+        <li class="fly-in"><a href="/#activities">Activities</a></li>
+        <li class="fly-in"><a href="/gallery">Gallery</a></li>
+        <li class="fly-in"><a href="/#contact">Contact Us</a></li>
+        <li class="fly-in"><a href="/our-team">Our Team</a></li>
+    </ul>
 </nav>
 
 <style>
-    nav {
+    nav ul {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -22,7 +17,14 @@ const { hidden = false } = Astro.props;
         gap: 3rem;
     }
 
-    @media screen and (width < 480px) {
+    @media screen and (width < 1080px) {
+        nav ul {
+            font-size: var(--font-size-sm);
+            gap: 2rem;
+        }
+    }
+
+    @media screen and (width < 860px) {
         nav {
             display: none;
             flex-direction: column;
@@ -35,10 +37,12 @@ const { hidden = false } = Astro.props;
         cursor: pointer;
         font-weight: 600;
         --fly-from: 0 -100px;
-        animation-fill-mode: both;
         animation-delay: 500ms;
         animation-duration: 500ms;
         animation-timing-function: ease-in-out;
+    }
+
+    nav li:hover {
     }
 
     nav li:nth-child(1) {
@@ -55,6 +59,10 @@ const { hidden = false } = Astro.props;
 
     nav li:nth-child(4) {
         animation-duration: 1500ms;
+    }
+
+    nav li:nth-child(5) {
+        animation-duration: 1850ms;
     }
 
     a {
