@@ -8,7 +8,7 @@ const { title = "About Us", showLink = true } = Astro.props;
 ---
 
 <section id="about-us">
-    <div class="container animate view-timeline">
+    <div class="container flex flex-col animate view-timeline">
         <h2>{title}</h2>
         <p>
             We are <strong>Para-Karam</strong>, an organization dedicated to
@@ -25,35 +25,27 @@ const { title = "About Us", showLink = true } = Astro.props;
             wish to share our expertise with the young generation and broader
             community.
         </p>
-        {showLink && <a href="/our-team">Read more about our Team <span class="arrow">→</span></a>}
+        {showLink && <a href="/our-team" class="flex">Read more about our Team <span class="arrow">→</span></a>}
     </div>
 </section>
 
 <style>
     section {
         padding-block: 8rem;
-        background: linear-gradient(to top, #484b7d, #1c1f4c);
+        background: var(--gradient-1);
         color: var(--color-white);
     }
 
     div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: 2rem;
         text-align: center;
         text-wrap: pretty;
-        padding-inline: 8rem;
+        width: min(90dvw, 768px);
         animation-name: fade, scale;
     }
 
     a {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 0.25rem;
+        gap: 0.5rem;
 		border-bottom: 1px solid var(--color-white);
         transition:  border-bottom var(--transition-duration);
     }
@@ -64,11 +56,5 @@ const { title = "About Us", showLink = true } = Astro.props;
 
     .arrow {
         font-size: var(--font-size-xl);
-    }
-
-    @media screen and (width < 480px) {
-        div {
-            padding-inline: 2rem;
-        }
     }
 </style>
