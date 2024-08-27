@@ -9,7 +9,38 @@ import Item from "./Item.astro";
         <Item text="Unique and thrilling experiences" img="background.jpg" />
         <Item text="Expand your horizons" img="footer.jpg" />
     </ul>
+    <ul id="features-animation">
+    </ul>
 </section>
+
+<script>
+    import { getRandomNumber, getRandomPercentage, getRandomDuration } from "../../../../utility/functions"
+
+    const section = document.getElementById("features-animation")!
+
+    const count = 15
+    for (let i = 0; i <= count; i++) {
+        const li = document.createElement("li")
+        li.style.listStyle = 'none'
+        li.style.display = 'block'
+        li.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'
+
+        const size = getRandomNumber(128, 16) + 'px'
+        li.style.width = size
+        li.style.height = size
+
+        li.style.position = 'absolute'
+        li.style.left = getRandomPercentage()
+        li.style.bottom = (-1 * getRandomNumber(300, 100)) + "px"
+
+        li.style.animation = 'float 25s linear infinite'
+        li.style.animationDelay = getRandomDuration(30, 0, 's')
+        li.style.animationDuration = getRandomDuration(60, 15, 's')
+
+        section.appendChild(li)
+    }
+</script>
+
 
 <style>
     section {
@@ -18,8 +49,9 @@ import Item from "./Item.astro";
         justify-content: center;
         align-items: center;
         padding-block: 8rem;
-        background-color: #000;
+        background: linear-gradient(to left, #484b7d, #1c1f4c);
         color: whitesmoke;
+        position: relative;
     }
 
     ul {
@@ -40,6 +72,39 @@ import Item from "./Item.astro";
         ul {
             flex-direction: column;
             row-gap: 4rem;
+        }
+    }
+    
+    #features-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #features-animation li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: float 25s linear infinite;
+        bottom: -150px;    
+    }
+
+    @keyframes float {
+        0%{
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+        100%{
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
         }
     }
 </style>
