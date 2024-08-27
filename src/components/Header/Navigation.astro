@@ -24,16 +24,19 @@ const routes = [
         const navLinks = document.getElementById("nav-links")!;
         const menuIcon = document.getElementById("menu-icon")!;
         const navElements = document.querySelectorAll("#nav-links li");
+        const cta = document.getElementById("call-to-action")!;
 
         function toggleMenu() {
             if (navLinks.classList.contains("open")) {
                 navLinks.classList.remove("open")
                 menuIcon.innerHTML = "&#9776;" 
                 navElements.forEach(e => e.classList.add("fly-in"))
+                cta.style.display = 'block'
             } else {
                 navLinks.classList.add("open")
                 menuIcon.innerHTML = "&#10006;"
                 navElements.forEach(e => e.classList.remove("fly-in"))
+                cta.style.display = 'none'
             }
         }
 
@@ -76,7 +79,7 @@ const routes = [
             left: 0;
             height: 90dvh;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
+            background-color: rgba(0, 0, 0, 0.5);
             display: none;
             gap: 2rem;
             padding: 2rem;
