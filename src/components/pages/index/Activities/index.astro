@@ -1,42 +1,29 @@
 ---
 // Components
-import Section from "../../../Section.astro";
-import Button from "../../../Button.astro";
 import Grid from "./Grid.astro";
 ---
 
-<Section id="activities">
-    <div id="activities">
-        <div id="title" class="animate view-timeline">
+<section>
+    <div id="activities" class="flex flex-col">
+        <div id="title" class="flex flex-col animate view-timeline">
             <h2>Activities</h2>
             <p>Find your adventure</p>
         </div>
         <Grid />
     </div>
-</Section>
+</section>
 
 <style>
+    section {
+        padding-block: 6rem;
+    }
+
     #activities {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: 4rem;
     }
 
     #title {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         animation-name: fade, scale;
-    }
-
-    #slider {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
     }
 </style>
