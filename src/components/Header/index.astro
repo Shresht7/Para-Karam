@@ -4,7 +4,7 @@ import Logo from "../Logo.astro";
 import Navigation from "./Navigation.astro";
 ---
 
-<header class="flex">
+<header class="flex animate fly">
     <div class="container flex">
         <span class="animate"><Logo /></span>
         <Navigation />
@@ -26,6 +26,9 @@ import Navigation from "./Navigation.astro";
         box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.125);
 
         --base-animation-delay: 750ms;
+
+        --fly-from: 0 -10dvh;
+        --animation-delay: var(--base-animation-delay);
     }
 
     header:hover {
