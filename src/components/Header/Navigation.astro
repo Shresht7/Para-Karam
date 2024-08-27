@@ -106,7 +106,7 @@ const routes = [
         border-radius: 4px;
     }
 
-    nav li:hover {
+    nav li:hover, nav li:has(a:focus) {
         background-color: var(--color-white);
         color: var(--color-black);
     }
@@ -134,5 +134,9 @@ const routes = [
     a {
         text-decoration: none;
         color: inherit;
+
+        &:focus {
+            outline: none;
+        }
     }
 </style>

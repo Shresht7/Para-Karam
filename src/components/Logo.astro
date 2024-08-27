@@ -26,15 +26,21 @@ const {
         justify-content: flex-start;
         align-items: center;
         gap: 0.5rem;
+        padding-inline: 1rem;
 
         --fly-from: 0 -100px;
         animation-delay: 500ms;
         animation-duration: 500ms;
+
+        transition: all 250ms ease-out;
     }
 
-    #logo-container:hover {
-        color: white;
-        text-shadow: 0px 0px 1px white;
+    #logo-container:hover, #logo-container:focus {
+        background-color: white;
+        color: var(--color-black);
+        text-shadow: 0px 0px 1px var(--color-white);
+        outline: none;
+        border-radius: 4px;
     }
 
     #logo {
