@@ -8,7 +8,7 @@ const { title = "About Us", showLink = true } = Astro.props;
 ---
 
 <section id="about-us">
-    <div class="contained fade-in unseen">
+    <div class="contained animate view-timeline fade">
         <h2>{title}</h2>
         <p>
             We are <strong>Para-Karam</strong>, an organization dedicated to
@@ -45,6 +45,8 @@ const { title = "About Us", showLink = true } = Astro.props;
         text-align: center;
         text-wrap: pretty;
         padding-inline: 8rem;
+        /* animation: fade 500ms, fly 250ms ease-out; */
+        /* --animation-duration: 500ms; */
     }
 
     a {

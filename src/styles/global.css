@@ -100,11 +100,6 @@ a:hover {
 /* UTILITY CLASSES */
 /* =============== */
 
-.unseen,
-.invisible {
-	opacity: 0;
-}
-
 .contained {
 	width: 75%;
 	max-width: var(--container-width);
@@ -121,6 +116,22 @@ a:hover {
 /* ANIMATIONS */
 /* ========== */
 
+.animate {
+	animation-name: var(--animation-name, fade);
+	animation-duration: var(--animation-duration, 250ms);
+	animation-delay: var(--animation-delay, 0ms);
+	animation-timing-function: var(--animation-timing-function, ease);
+	animation-fill-mode: var(--animation-fill-mode, both);
+}
+
+.view-timeline {
+	animation-timeline: view(var(--view-offset, 150px));
+}
+
+.animation-direction-reverse {
+	animation-direction: reverse;
+}
+
 @keyframes fade {
 	from {
 		opacity: var(--fade-from, 0);
@@ -131,28 +142,10 @@ a:hover {
 	}
 }
 
-.fade-in {
+.fade {
 	--fade-from: 0;
 	--fade-to: 1;
 	animation-name: fade;
-	animation-timing-function: ease;
-	animation-duration: var(--animation-duration, 500ms);
-	animation-delay: var(--animation-delay, 500ms);
-	animation-fill-mode: both;
-}
-
-.fade-out {
-	--fade-from: 1;
-	--fade-to: 0;
-	animation-name: fade;
-	animation-duration: var(--animation-duration, 500ms);
-	animation-delay: var(--animation-delay, 500ms);
-	animation-fill-mode: both;
-}
-
-.fade-in.unseen,
-.fade-out.unseen {
-	animation-name: none;
 }
 
 @keyframes fly {
@@ -165,20 +158,9 @@ a:hover {
 	}
 }
 
-.fly-in {
+.fly {
 	--fly-from: 0 20px;
 	--fly-to: 0 0px;
-	animation-name: fly;
-	animation-timing-function: ease-out;
-	animation-duration: 250ms;
-	animation-fill-mode: both;
-}
-
-.fly-out {
-	--fly-from: 0 0;
-	--fly-to: 0 -20px;
-	animation-name: fly;
-	animation-timing-function: ease-out;
-	animation-duration: 250ms;
-	animation-fill-mode: both;
+	--animation-name: var(--animation-name), fly;
+	/* animation-name: fly; */
 }
