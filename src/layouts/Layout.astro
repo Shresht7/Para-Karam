@@ -33,3 +33,19 @@ import "../styles/global.css";
 		<slot />
 	</body>
 </html>
+
+<script>
+	// Remove the `.unseen` class when the element has been seen
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.remove("unseen")
+			}
+		})
+	})
+
+	// Observe all elements that have the `.unseen` class 
+	document.querySelectorAll(".unseen").forEach(entry => {
+		observer.observe(entry)
+	})
+</script>
