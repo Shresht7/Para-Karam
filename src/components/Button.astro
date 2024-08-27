@@ -19,11 +19,14 @@ const color = Astro.props.color ?? "blue";
     button {
         padding: 0.5rem 1rem;
         border-radius: 100px;
-        transition: transform 100ms ease-in-out;
+        transition: transform 100ms ease-in-out, outline 100ms ease-out;
+        outline: 0px solid var(--color-white);
     }
 
     button:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
+        outline-width: 3px;
+        outline-offset: 4px;
     }
 
     .white {
@@ -54,6 +57,6 @@ const color = Astro.props.color ?? "blue";
 
     .large {
         font-size: 1.25rem;
-        padding: 0.75rem 1.25rem;
+        padding: 0.75rem 2rem;
     }
 </style>
