@@ -8,7 +8,7 @@ const { title = "About Us", showLink = true } = Astro.props;
 ---
 
 <section id="about-us">
-    <div class="contained">
+    <div class="contained fade-in unseen">
         <h2>{title}</h2>
         <p>
             We are <strong>Para-Karam</strong>, an organization dedicated to
@@ -33,7 +33,7 @@ const { title = "About Us", showLink = true } = Astro.props;
     section {
         padding-block: 8rem;
         background: linear-gradient(to top, #484b7d, #1c1f4c);
-        color: whitesmoke;
+        color: var(--color-white);
     }
 
     div {

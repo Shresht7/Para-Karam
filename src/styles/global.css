@@ -100,6 +100,11 @@ a:hover {
 /* UTILITY CLASSES */
 /* =============== */
 
+.unseen,
+.invisible {
+	opacity: 0;
+}
+
 .contained {
 	width: 75%;
 	max-width: var(--container-width);
@@ -115,6 +120,40 @@ a:hover {
 /* ========== */
 /* ANIMATIONS */
 /* ========== */
+
+@keyframes fade {
+	from {
+		opacity: var(--fade-from, 0);
+	}
+
+	to {
+		opacity: var(--fade-to, 1);
+	}
+}
+
+.fade-in {
+	--fade-from: 0;
+	--fade-to: 1;
+	animation-name: fade;
+	animation-timing-function: ease;
+	animation-duration: var(--animation-duration, 500ms);
+	animation-delay: var(--animation-delay, 500ms);
+	animation-fill-mode: both;
+}
+
+.fade-out {
+	--fade-from: 1;
+	--fade-to: 0;
+	animation-name: fade;
+	animation-duration: var(--animation-duration, 500ms);
+	animation-delay: var(--animation-delay, 500ms);
+	animation-fill-mode: both;
+}
+
+.fade-in.unseen,
+.fade-out.unseen {
+	animation-name: none;
+}
 
 @keyframes fly {
 	from {
