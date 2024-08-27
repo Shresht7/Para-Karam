@@ -118,7 +118,7 @@ a:hover {
 
 .animate {
 	animation-name: var(--animation-name, fade);
-	animation-duration: var(--animation-duration, 250ms);
+	animation-duration: var(--animation-duration, 500ms);
 	animation-delay: var(--animation-delay, 0ms);
 	animation-timing-function: var(--animation-timing-function, ease);
 	animation-fill-mode: var(--animation-fill-mode, both);
@@ -161,6 +161,21 @@ a:hover {
 .fly {
 	--fly-from: 0 20px;
 	--fly-to: 0 0px;
-	--animation-name: var(--animation-name), fly;
-	/* animation-name: fly; */
+	animation-name: fly;
+}
+
+@keyframes scale {
+	from {
+		scale: var(--scale-from, 0.8);
+	}
+
+	to {
+		scale: var(--scale-to, 1);
+	}
+}
+
+.scale {
+	--scale-from: 0.8;
+	--scale-to: 1;
+	animation-name: scale;
 }
