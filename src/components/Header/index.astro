@@ -24,6 +24,8 @@ import Navigation from "./Navigation.astro";
         backdrop-filter: blur(40px);
         transition: backdrop-filter var(--transition-duration);
         box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.125);
+
+        --base-animation-delay: 750ms;
     }
 
     header:hover {
@@ -39,7 +41,7 @@ import Navigation from "./Navigation.astro";
         --fly-from: 0 -100px;
         animation-name: fly;
         animation-timing-function: ease-out;
-        animation-delay: 750ms;
+        animation-delay: var(--base-animation-delay);
     }
 
     @media screen and (width <= 900px) {
