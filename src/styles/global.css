@@ -190,3 +190,17 @@ a:hover {
 .scale {
 	animation-name: scale;
 }
+
+@keyframes blur {
+	from {
+		backdrop-filter: blur(var(--blur-from, 0px));
+	}
+
+	to {
+		backdrop-filter: blur(var(--blur-to, 40px));
+	}
+}
+
+.blur {
+	animation-name: blur;
+}
