@@ -4,7 +4,7 @@ import Button from "../../../Button.astro";
 ---
 
 <section>
-    <div id="hero-container" class="container">
+    <div id="hero-container" class="container animate">
         <div id="call-to-action">
             <div id="cta-text">
                 <p>Answer the call of</p>
@@ -40,7 +40,7 @@ import Button from "../../../Button.astro";
         min-height: 100dvh;
         background-image: url("/background.jpg");
         background-size: cover;
-        background-position: 0% 75%;
+        background-position: 0% 65%;
     }
 
     #hero-container {
@@ -49,6 +49,8 @@ import Button from "../../../Button.astro";
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        --fly-from: 0 40px;
+        animation: fade 500ms 750ms both, fly 500ms 750ms both;
     }
 
     #hero-container > div {
