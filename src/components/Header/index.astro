@@ -6,7 +6,7 @@ import Navigation from "./Navigation.astro";
 
 <header class="flex">
     <div class="container flex">
-        <Logo />
+        <span class="animate"><Logo /></span>
         <Navigation />
     </div>
 </header>
@@ -33,6 +33,13 @@ import Navigation from "./Navigation.astro";
     div {
         justify-content: space-between;
         color: var(--color-white);
+    }
+
+    span.animate {
+        --fly-from: 0 -100px;
+        animation-name: fly;
+        animation-timing-function: ease-out;
+        animation-delay: 750ms;
     }
 
     @media screen and (width <= 900px) {

@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 ---
 
-<a href="/" id="logo-container" class="fly-in">
+<a href="/" id="logo-container">
     {icon && <img id="logo" src="/favicon.svg" alt="logo" />}
     {text && <div id="name">Para-Karam</div>}
 </a>
@@ -27,11 +27,6 @@ const {
         align-items: center;
         gap: 0.5rem;
         padding-inline: 1rem;
-
-        --fly-from: 0 -100px;
-        animation-delay: 500ms;
-        animation-duration: 500ms;
-
         transition: all 250ms ease-out;
     }
 
