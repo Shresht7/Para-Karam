@@ -159,8 +159,6 @@ a:hover {
 }
 
 .fade {
-	--fade-from: 0;
-	--fade-to: 1;
 	animation-name: fade;
 }
 
@@ -175,14 +173,12 @@ a:hover {
 }
 
 .fly {
-	--fly-from: 0 20px;
-	--fly-to: 0 0px;
 	animation-name: fly;
 }
 
 @keyframes scale {
 	from {
-		scale: var(--scale-from, 0.8);
+		scale: var(--scale-from, 0.9);
 	}
 
 	to {
@@ -191,7 +187,5 @@ a:hover {
 }
 
 .scale {
-	--scale-from: 0.8;
-	--scale-to: 1;
 	animation-name: scale;
 }
