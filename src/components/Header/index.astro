@@ -4,8 +4,8 @@ import Logo from "../Logo.astro";
 import Navigation from "./Navigation.astro";
 ---
 
-<header>
-    <div class="container">
+<header class="flex">
+    <div class="container flex">
         <Logo />
         <Navigation />
     </div>
@@ -16,9 +16,10 @@ import Navigation from "./Navigation.astro";
         position: absolute;
         top: 0;
         left: 0;
+
         height: 10dvh;
         width: 100%;
-        padding: 1rem 0rem;
+
         background-color: transparent;
         backdrop-filter: blur(40px);
         transition: backdrop-filter var(--transition-duration);
@@ -30,10 +31,7 @@ import Navigation from "./Navigation.astro";
     }
 
     div {
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
-        align-items: center;
         color: var(--color-white);
     }
 
