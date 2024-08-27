@@ -100,14 +100,14 @@ a:hover {
 /* UTILITY CLASSES */
 /* =============== */
 
-.contained {
+.container {
 	width: 75%;
 	max-width: var(--container-width);
 	margin: 0 auto;
 }
 
 @media screen and (width < 480px) {
-	.contained {
+	.container {
 		width: 100%;
 	}
 }
