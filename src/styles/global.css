@@ -15,6 +15,10 @@
 	--color-white: whitesmoke;
 	--color-blue: #97cbe0;
 
+	--color-gradient-1: #484b7d;
+	--color-gradient-2: #1c1f4c;
+	--gradient-1: linear-gradient(to top, var(--color-gradient-1), var(--color-gradient-2));
+
 	--font-family: "Maven Pro", sans-serif;
 	--font-family-cursive: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
