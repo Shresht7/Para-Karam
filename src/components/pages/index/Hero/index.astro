@@ -6,9 +6,11 @@ import Button from "../../../Button.astro";
 <section>
     <div id="hero-container" class="contained">
         <div id="call-to-action">
-            <p>Answer the call of</p>
-            <p id="highlight">Adventure</p>
-            <div id="buttons">
+            <div id="cta-text">
+                <p>Answer the call of</p>
+                <p id="highlight">Adventure</p>
+            </div>
+            <div id="cta-buttons">
                 <Button id="book-now" variant="solid" color="white" size="large"
                     >Book Now!</Button
                 >
@@ -59,12 +61,20 @@ import Button from "../../../Button.astro";
         font-size: 2rem;
     }
 
+    #cta-text {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--font-family-cursive);
+        font-style: italic;
+        line-height: 1.15;
+    }
+
     #highlight {
         color: var(--color-white);
         font-size: 5rem;
     }
 
-    #buttons {
+    #cta-buttons {
         margin-top: 2rem;
         display: flex;
         flex-direction: row;

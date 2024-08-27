@@ -15,7 +15,8 @@
 		--color-white: whitesmoke;
 		--color-blue: #97cbe0;
 
-		--font-family: "Maven Pro";
+		--font-family: "Maven Pro", sans-serif;
+		--font-family-cursive: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 		--font-size-xxs: 0.5rem;
 		--font-size-xs: 0.675rem;
