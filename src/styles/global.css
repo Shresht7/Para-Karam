@@ -141,7 +141,8 @@ a:hover {
 }
 
 .view-timeline {
-	animation-timeline: view(var(--view-offset, 150px));
+	animation-timeline: view(var(--view-offset, 0));
+	animation-range: var(--animation-range, entry 50% cover 50%);
 }
 
 .animation-direction-reverse {
