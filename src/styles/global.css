@@ -100,6 +100,21 @@ a:hover {
 /* UTILITY CLASSES */
 /* =============== */
 
+.flex {
+	display: flex;
+	flex-direction: var(--flex-direction, row);
+	justify-content: var(--justify-content, center);
+	align-items: var(--align-items, center);
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
 .container {
 	width: 75%;
 	max-width: var(--container-width);
