@@ -11,8 +11,13 @@ import Contact from "./Contact.astro";
         <Logo />
         <Contact />
     </div>
-    <div id="copyright">© Para-Karam. All Rights Reserved.</div>
+    <div id="copyright">Para-Karam © Copyright YYYY. All Rights Reserved.</div>
 </footer>
+
+<script>
+    const copyright = document.getElementById('copyright')!;
+    copyright.innerText = copyright.innerText.replace('YYYY', (new Date).getFullYear().toString())
+</script>
 
 <style>
     footer {
