@@ -1,8 +1,16 @@
 <div id="grid">
-    <div class="grid-item top">Camping</div>
-    <div class="grid-item side">Parasailing</div>
-    <div class="grid-item bottom-1">Adventure Sports</div>
-    <div class="grid-item bottom-2">Trekking</div>
+    <div class="grid-item top animate view-timeline">
+        Camping
+    </div>
+    <div class="grid-item side animate view-timeline">
+        Parasailing
+    </div>
+    <div class="grid-item bottom-1 animate view-timeline">
+        Adventure Sports
+    </div>
+    <div class="grid-item bottom-2 animate view-timeline">
+        Trekking
+    </div>
 </div>
 
 <style>
@@ -38,6 +46,8 @@
         padding: 1rem 2rem;
         color: white;
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.125);
+        animation-name: fade, fly;
+        --view-offset: -20dvh;
     }
 
     @media screen and (width < 480px) {
@@ -63,6 +73,7 @@
         background-image: url("/camping.jpg");
         background-size: cover;
         background-position: 0 100%;
+        --fly-from: -50px 0px;
     }
 
     #grid .side {
@@ -71,17 +82,20 @@
         background-image: url("/footer.jpg");
         background-size: cover;
         background-position: 30% 0%;
+        --fly-from: 75px 0;
     }
 
     #grid .bottom-1 {
         background-image: url("/background.jpg");
         background-size: cover;
         background-position: 80% 0%;
+        --fly-from: -75px 0;
     }
 
     #grid .bottom-2 {
         background-image: url("/trekking.jpg");
         background-size: cover;
         background-position: 30% 0%;
+        --fly-from: 0 60px;
     }
 </style>
