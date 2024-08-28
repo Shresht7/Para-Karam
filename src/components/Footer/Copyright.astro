@@ -1,0 +1,15 @@
+<div id="copyright">Para-Karam © Copyright YYYY. All Rights Reserved.</div>
+
+<script>
+    const copyright = document.getElementById("copyright")!;
+    const year = new Date().getFullYear().toString();
+    copyright.innerText = copyright.innerText.replace("YYYY", year);
+</script>
+
+<style>
+    #copyright {
+        color: var(--color-white);
+        text-align: center;
+        padding-inline: 1rem;
+    }
+</style>

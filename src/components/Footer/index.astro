@@ -2,6 +2,7 @@
 // Components
 import Logo from "@components/Logo.astro";
 import Contact from "./Contact.astro";
+import Copyright from "./Copyright.astro";
 
 // Assets
 import bgImage from "@assets/images/footer.jpg";
@@ -14,16 +15,8 @@ import bgImage from "@assets/images/footer.jpg";
         <Logo />
         <Contact />
     </div>
-    <div id="copyright">Para-Karam © Copyright YYYY. All Rights Reserved.</div>
+    <Copyright />
 </footer>
-
-<script>
-    const copyright = document.getElementById("copyright")!;
-    copyright.innerText = copyright.innerText.replace(
-        "YYYY",
-        new Date().getFullYear().toString(),
-    );
-</script>
 
 <style>
     footer {
@@ -48,12 +41,6 @@ import bgImage from "@assets/images/footer.jpg";
         justify-content: space-between;
         align-content: center;
         padding: 12rem 4rem;
-    }
-
-    #copyright {
-        color: var(--color-white);
-        text-align: center;
-        padding-inline: 1rem;
     }
 
     @media screen and (width < 768px) {
