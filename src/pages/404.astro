@@ -7,7 +7,7 @@ import Footer from "../components/Footer/index.astro";
 
 <Layout title="404 Page Not Found">
     <Header />
-    <main class="flex flex-col"> 
+    <main class="flex flex-col">
         <div>
             <h2 class="animate">404</h2>
             <p class="animate">Page Not Found</p>
@@ -20,23 +20,29 @@ import Footer from "../components/Footer/index.astro";
 <script>
     import { navigate } from "astro:transitions/client";
 
-    document.addEventListener('astro:page-load', () => {
-        const goBack = document.getElementById('go-back')!;
-        goBack.addEventListener('click', () => {
-            navigate('/')
-        })
-    })
+    document.addEventListener("astro:page-load", () => {
+        const goBack = document.getElementById("go-back")!;
+        goBack.addEventListener("click", () => {
+            navigate("/");
+        });
+    });
 </script>
 
 <style>
     main {
         height: 100dvh;
-        background: linear-gradient(135deg, var(--color-blue), var(--color-gradient-2));
+        background: linear-gradient(
+            135deg,
+            var(--color-blue),
+            var(--color-gradient-2)
+        );
         color: var(--color-white);
         gap: 6rem;
+        text-align: center;
     }
 
-    h2, p {
+    h2,
+    p {
         font-weight: bold;
         animation-name: fade, fly, scale;
         animation-duration: 1500ms;
@@ -59,5 +65,21 @@ import Footer from "../components/Footer/index.astro";
         animation-name: fade, fly;
         animation-delay: 1500ms;
         --fly-from: 25px 0;
+    }
+
+    @media screen and (width <= 768px) {
+        h2 {
+            font-size: 12rem;
+        }
+
+        p {
+            font-size: 2rem;
+        }
+    }
+
+    @media screen and (width <= 480px) {
+        h2 {
+            font-size: 8rem;
+        }
     }
 </style>
