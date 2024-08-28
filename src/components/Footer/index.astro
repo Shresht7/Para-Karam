@@ -2,11 +2,14 @@
 // Components
 import Logo from "@components/Logo.astro";
 import Contact from "./Contact.astro";
+
+// Assets
+import bgImage from "@assets/images/footer.jpg";
 ---
 
 <!-- Photo by <a href="https://unsplash.com/@chrisk91?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Christian J.</a> on <a href="https://unsplash.com/photos/a-person-is-parasailing-in-the-sky-at-sunset-Ejlj69BGyoE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
    -->
-<footer>
+<footer style={`background-image: url("${bgImage.src}")`}>
     <div id="footer-info">
         <Logo />
         <Contact />
@@ -15,13 +18,15 @@ import Contact from "./Contact.astro";
 </footer>
 
 <script>
-    const copyright = document.getElementById('copyright')!;
-    copyright.innerText = copyright.innerText.replace('YYYY', (new Date).getFullYear().toString())
+    const copyright = document.getElementById("copyright")!;
+    copyright.innerText = copyright.innerText.replace(
+        "YYYY",
+        new Date().getFullYear().toString(),
+    );
 </script>
 
 <style>
     footer {
-        background-image: url("/footer.jpg");
         background-size: cover;
         background-position-y: 40%;
         padding-block: 4rem;
