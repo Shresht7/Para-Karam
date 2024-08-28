@@ -1,10 +1,9 @@
 ---
 // Components
-import Section from "../../../Section.astro";
 import Map from "../../../Map.astro";
 ---
 
-<Section id="contact" padding="8rem">
+<section id="contact">
     <div class="container">
         <p>Ready to embark on an adventure of a lifetime?</p>
         <h2>Contact Us</h2>
@@ -21,9 +20,13 @@ import Map from "../../../Map.astro";
             </div>
         </div>
     </div>
-</Section>
+</section>
 
 <style>
+    #contact {
+        padding-block: 8rem;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
