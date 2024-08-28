@@ -100,35 +100,3 @@ a:hover {
 		scroll-behavior: auto !important;
 	}
 }
-
-/* =============== */
-/* UTILITY CLASSES */
-/* =============== */
-
-.flex {
-	display: flex;
-	flex-direction: var(--flex-direction, row);
-	justify-content: var(--justify-content, center);
-	align-items: var(--align-items, center);
-	gap: var(--gap);
-}
-
-.flex-row {
-	flex-direction: row;
-}
-
-.flex-col {
-	flex-direction: column;
-}
-
-.container {
-	width: 75%;
-	max-width: var(--container-width);
-	margin: 0 auto;
-}
-
-@media screen and (width < 480px) {
-	.container {
-		width: 100%;
-	}
-}
