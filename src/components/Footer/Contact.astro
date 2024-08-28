@@ -6,8 +6,9 @@ import PhoneNumber from "../PhoneNumber.astro";
 
 <div id="contact-details">
     <div id="title">Contact Us</div>
-    <div id="number">
+    <div id="details">
         <PhoneNumber tel={7042064607} />
+        <p>admin@para-karam.com</p>
     </div>
     <Socials />
 </div>
@@ -18,22 +19,30 @@ import PhoneNumber from "../PhoneNumber.astro";
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
-        gap: 0.5rem;
+        gap: 1rem;
+    }
+
+    #details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: 1.5rem;
+        font-weight: bold;
     }
 
     @media screen and (width <= 768px) {
         #contact-details {
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
+        }
+
+        #details {
+            align-items: center;
         }
     }
 
     #title {
         font-weight: bold;
-    }
-
-    #number {
-        font-weight: bold;
-        font-size: 2rem;
     }
 </style>
