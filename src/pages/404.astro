@@ -1,0 +1,63 @@
+---
+// Components
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header/index.astro";
+import Footer from "../components/Footer/index.astro";
+---
+
+<Layout title="404 Page Not Found">
+    <Header />
+    <main class="flex flex-col"> 
+        <div>
+            <h2 class="animate">404</h2>
+            <p class="animate">Page Not Found</p>
+        </div>
+        <a id="go-back" class="animate">← Go Back</a>
+    </main>
+    <Footer />
+</Layout>
+
+<script>
+    import { navigate } from "astro:transitions/client";
+
+    document.addEventListener('astro:page-load', () => {
+        const goBack = document.getElementById('go-back')!;
+        goBack.addEventListener('click', () => {
+            navigate('/')
+        })
+    })
+</script>
+
+<style>
+    main {
+        height: 100dvh;
+        background: linear-gradient(135deg, var(--color-blue), var(--color-gradient-2));
+        color: var(--color-white);
+        gap: 6rem;
+    }
+
+    h2, p {
+        font-weight: bold;
+        animation-name: fade, fly, scale;
+        animation-duration: 1500ms;
+        --fly-from: 0 50px;
+        --scale-from: 0.8;
+    }
+
+    h2 {
+        font-size: 16rem;
+        line-height: 1.2;
+        animation-delay: 500ms;
+    }
+
+    p {
+        font-size: 4rem;
+        animation-delay: 750ms;
+    }
+
+    a {
+        animation-name: fade, fly;
+        animation-delay: 1500ms;
+        --fly-from: 25px 0;
+    }
+</style>
