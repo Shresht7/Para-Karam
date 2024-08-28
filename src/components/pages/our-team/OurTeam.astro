@@ -1,9 +1,5 @@
----
-// Components
-import Section from "../../Section.astro";
----
 
-<Section padding="4rem">
+<section>
     <div id="team">
         <div class="member ramesh">
             <h2>Group Captain Ramesh Mishra VM (Retd.)</h2>
@@ -36,9 +32,13 @@ import Section from "../../Section.astro";
             </ul>
         </div>
     </div>
-</Section>
+</section>
 
 <style>
+    section {
+        padding-block: 4rem;
+    }
+
     #team {
         display: flex;
         flex-direction: row;
