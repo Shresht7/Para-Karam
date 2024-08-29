@@ -8,15 +8,15 @@ const { title = "About Us", showLink = true } = Astro.props;
 ---
 
 <section id="about-us">
-    <div class="container flex flex-col animate view-timeline">
-        <h2>{title}</h2>
-        <p>
+    <div class="container flex flex-col">
+        <h2 class="animate view-timeline">{title}</h2>
+        <p class="animate view-timeline">
             We are <strong>Para-Karam</strong>, an organization dedicated to
             fostering a spirit of adventure and resilience amoung youth through
             exciting and safe adventure activities. We aim to boost adventure
             sports and create opportunities for adventure enthusiasts.
         </p>
-        <p>
+        <p class="animate view-timeline">
             We are three retired officers of the Indian Air Force with extensive
             experience and expertise in various adventure activities including
             para-sailing, trekking, camping and other related pursuits. Our
@@ -25,7 +25,13 @@ const { title = "About Us", showLink = true } = Astro.props;
             wish to share our expertise with the young generation and broader
             community.
         </p>
-        {showLink && <a href="/our-team" class="flex">Read more about our Team <span class="arrow">→</span></a>}
+        {
+            showLink && (
+                <a href="/our-team" class="flex animate view-timeline">
+                    Read more about our Team <span class="arrow">→</span>
+                </a>
+            )
+        }
     </div>
 </section>
 
@@ -46,15 +52,19 @@ const { title = "About Us", showLink = true } = Astro.props;
 
     a {
         gap: 0.5rem;
-		border-bottom: 1px solid var(--color-white);
-        transition:  border-bottom var(--transition-duration);
+        border-bottom: 1px solid var(--color-white);
+        transition: border-bottom var(--transition-duration);
     }
 
     a:hover {
-		border-color: var(--color-blue);
+        border-color: var(--color-blue);
     }
 
     .arrow {
         font-size: var(--font-size-xl);
+    }
+
+    .animate {
+        animation-name: fade, fly, scale;
     }
 </style>
