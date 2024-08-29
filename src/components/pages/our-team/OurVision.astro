@@ -1,28 +1,76 @@
 <section>
     <div class="container">
-        <h2>Our Vision</h2>
+        <h2 class="animate view-timeline">Our Vision</h2>
         <ol>
-            <li>To inspire and empower youth through adventure sports, fostering physical fitness, mental resilience, and a spirit of teamwork and discipline.</li>
-            <li>To provide safe, exciting, and educational adventure experiences that promote personal growth, environmental stewardship, and a life-long love for outdoor activities.</li>
-            <li>To provide unique and thrilling experiences</li>
-            <li>Inspiring the youth of Uttar Pradesh to join the defence services</li>
+            <li class="animate view-timeline">
+                To inspire and empower youth through adventure sports, fostering
+                physical fitness, mental resilience, and a spirit of teamwork
+                and discipline.
+            </li>
+            <li class="animate view-timeline">
+                To provide safe, exciting, and educational adventure experiences
+                that promote personal growth, environmental stewardship, and a
+                life-long love for outdoor activities.
+            </li>
+            <li class="animate view-timeline">
+                To provide unique and thrilling experiences
+            </li>
+            <li class="animate view-timeline">
+                Inspiring the youth of Uttar Pradesh to join the defence
+                services
+            </li>
         </ol>
     </div>
 </section>
 
 <style>
     section {
+        min-height: 80dvh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: #111;
-        color: whitesmoke;
-        padding: 6rem 2rem;
+        padding: 8rem 2rem;
     }
-  
+
     h2 {
         text-align: center;
         margin-bottom: 2rem;
+        animation-name: fade, fly, scale;
+        --fly-from: 0 -100px;
+    }
+
+    ol {
+        max-width: 960px;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.125rem;
+        gap: 0.5rem;
+    }
+
+    li {
+        animation-name: fade, fly;
+        --fly-from: 0 100px;
+        position: relative;
+        padding: 1rem 0.5rem;
+    }
+
+    li::before {
+        content: "";
+        width: 110%;
+        position: absolute;
+        inset: 0 -5%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    li:hover {
+        color: var(--color-white);
+    }
+
+    li:hover::before {
+        background-image: linear-gradient(-15deg, var(--color-blue), #3e3e3e);
+        transform: skew(-15deg);
     }
 </style>
