@@ -12,15 +12,15 @@ import bgImage from "@assets/images/footer.jpg";
    -->
 <footer style={`background-image: url("${bgImage.src}")`}>
     <div id="footer-info">
-        <Logo />
-        <Contact />
+        <div class="logo flex animate view-timeline"><Logo /></div>
+        <div class="contact flex animate view-timeline"><Contact /></div>
     </div>
     <Copyright />
 </footer>
 
 <style>
     footer {
-        background-size: cover;
+        background-size: 125%;
         background-position-y: 40%;
         padding-block: 4rem;
 
@@ -32,6 +32,9 @@ import bgImage from "@assets/images/footer.jpg";
         color: var(--color-white);
 
         container-type: inline-size;
+
+        animation: footer-background auto linear;
+        animation-timeline: view();
     }
 
     #footer-info {
@@ -43,14 +46,38 @@ import bgImage from "@assets/images/footer.jpg";
         padding: 12rem 4rem;
     }
 
-    @media screen and (width < 768px) {
+    #footer-info .logo {
+        animation-name: fade, fly;
+        --fly-from: -50px 0;
+    }
+
+    #footer-info .contact {
+        animation-name: fade, fly;
+        --fly-from: 50px 0;
+    }
+
+    @media screen and (width <= 768px) {
         footer {
-            background-position-x: 55%;
+            background-size: cover;
         }
 
         #footer-info {
             flex-direction: column;
             gap: 4rem;
+        }
+
+        #footer-info .logo,
+        #footer-info .contact {
+            animation-name: fade, scale;
+        }
+    }
+
+    @keyframes footer-background {
+        from {
+            background-position-x: 15%%;
+        }
+        to {
+            background-position-x: 100%;
         }
     }
 </style>

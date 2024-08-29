@@ -4,7 +4,7 @@ import Socials from "./Socials.astro";
 import PhoneNumber from "../PhoneNumber.astro";
 ---
 
-<div id="contact-details">
+<div id="contact-details" class="animation-stagger">
     <div id="title">Contact Us</div>
     <div id="details">
         <PhoneNumber tel={7042064607} />
@@ -45,5 +45,6 @@ import PhoneNumber from "../PhoneNumber.astro";
 
     #title {
         font-weight: bold;
+        animation-delay: 250ms;
     }
 </style>
