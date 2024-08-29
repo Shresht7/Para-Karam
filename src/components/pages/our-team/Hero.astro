@@ -6,7 +6,7 @@
 
 <style>
     section {
-        height: 40dvh;
+        min-height: 10dvh;
         background-image: url("./camping.jpg");
         background-size: cover;
         color: var(--color-white);
@@ -20,5 +20,16 @@
     }
     h1 {
         font-size: calc(2 * var(--font-size-xxl));
+        padding-block: 2rem;
+    }
+
+    @media screen and (width <= 768px) {
+        section {
+            background-position-y: 0%;
+        }
+
+        h1 {
+            padding-block: 0.5rem;
+        }
     }
 </style>
