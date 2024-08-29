@@ -5,20 +5,20 @@ import FeaturesAnimation from "@components/FeaturesAnimation.astro";
 
 <section>
     <div class="container">
-        <h2>Our Commitment</h2>
+        <h2 class="animate view-timeline">Our Commitment</h2>
         <ol>
-            <li>
+            <li class="animate view-timeline">
                 Planning and executing adventure activities with utmost safety
                 and professionalism
             </li>
-            <li>
+            <li class="animate view-timeline">
                 Providing trained and certified instructors for all activities
             </li>
-            <li>
+            <li class="animate view-timeline">
                 Managing logistics, equipment, and safety measures for
                 participants
             </li>
-            <li>
+            <li class="animate view-timeline">
                 Ensuring adherence to sustainable and environmentally friendly
                 tourism practices
             </li>
@@ -42,6 +42,8 @@ import FeaturesAnimation from "@components/FeaturesAnimation.astro";
     h2 {
         text-align: center;
         margin-bottom: 4rem;
+        animation-name: fade, fly;
+        --fly-from: 0 -50px;
     }
 
     ol {
@@ -61,10 +63,21 @@ import FeaturesAnimation from "@components/FeaturesAnimation.astro";
         backdrop-filter: blur(20px) grayscale(0.5);
         transition: all var(--transition-duration);
         z-index: 1;
+        animation-name: fade, fly, scale;
+        animation-range-start: entry 25%;
+        animation-range-end: entry 75%;
+    }
+
+    li:nth-of-type(odd) {
+        --fly-from: -50px 0;
+    }
+
+    li:nth-of-type(even) {
+        --fly-from: 50px 0;
     }
 
     li:hover {
-        scale: 1.025;
+        transform: scale(1.025);
         backdrop-filter: blur(40px) grayscale(0.8);
         box-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.125);
     }
