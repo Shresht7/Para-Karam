@@ -1,14 +1,4 @@
----
-// Components
-import Section from "../../../Section.astro";
----
-
-<Section
-    id="testimonials"
-    padding="8rem"
-    backgroundColor="#1e2a3b"
-    color="whitesmoke"
->
+<section id="testimonials">
     <div id="container">
         <div>
             <h2>Testimonials</h2>
@@ -26,9 +16,15 @@ import Section from "../../../Section.astro";
             <div id="images"></div>
         </div>
     </div>
-</Section>
+</section>
 
 <style>
+    section {
+        padding-block: 8rem;
+        background-color: #1e2a3b;
+        color: var(--color-white);
+    }
+
     #container {
         display: flex;
         flex-direction: column;
