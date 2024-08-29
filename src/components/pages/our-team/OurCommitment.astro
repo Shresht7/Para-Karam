@@ -1,13 +1,30 @@
+---
+// Components
+import FeaturesAnimation from "@components/FeaturesAnimation.astro";
+---
+
 <section>
     <div class="container">
         <h2>Our Commitment</h2>
         <ol>
-            <li>Planning and executing adventure activities with utmost safety and professionalism</li>
-            <li>Providing trained and certified instructors for all activities</li>
-            <li>Managing logistics, equipment, and safety measures for participants</li>
-            <li>Ensuring adherence to sustainable and environmentally friendly tourism practices</li>
+            <li>
+                Planning and executing adventure activities with utmost safety
+                and professionalism
+            </li>
+            <li>
+                Providing trained and certified instructors for all activities
+            </li>
+            <li>
+                Managing logistics, equipment, and safety measures for
+                participants
+            </li>
+            <li>
+                Ensuring adherence to sustainable and environmentally friendly
+                tourism practices
+            </li>
         </ol>
     </div>
+    <FeaturesAnimation />
 </section>
 
 <style>
@@ -16,13 +33,49 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: #111;
-        color: whitesmoke;
+        background: linear-gradient(to left, #484b7d, #1c1f4c);
+        color: var(--color-white);
         padding: 6rem 2rem;
+        position: relative;
     }
-  
+
     h2 {
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    ol {
+        max-width: 840px;
+        margin: 0 auto;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    li {
+        border: 2px solid var(--color-white);
+        border-radius: 8px;
+        padding: 4rem;
+        backdrop-filter: blur(20px) grayscale(0.5);
+        transition: all var(--transition-duration);
+        z-index: 1;
+    }
+
+    li:hover {
+        scale: 1.025;
+        backdrop-filter: blur(40px) grayscale(0.8);
+        box-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.125);
+    }
+
+    @media screen & (width <= 768px) {
+        ol {
+            grid-template-columns: none;
+        }
+
+        li {
+            padding: 1rem;
+        }
     }
 </style>
