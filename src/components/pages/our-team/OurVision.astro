@@ -31,13 +31,53 @@
         justify-content: center;
         align-items: center;
         padding: 8rem 2rem;
+        position: relative;
+    }
+
+    section::after,
+    section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+
+    section::after {
+        width: 80%;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+        transform: translate(10%) skew(-15deg);
+        animation: glass-slide auto ease-out;
+        animation-timeline: view();
+        animation-range-start: entry;
+        animation-range-end: entry 50%;
+    }
+
+    @keyframes glass-slide {
+        from {
+            background-color: transparent;
+            backdrop-filter: blur(0);
+            transform: translate(-20%) skew(-15deg);
+        }
+        to {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            transform: translate(10%) skew(-15deg);
+        }
+    }
+
+    section::before {
+        background-image: url("/public/vincentiu-solomon-R86bzJSneuw-unsplash.jpg");
+        background-size: cover;
+        background-position-x: 10%;
+        background-position-y: 10%;
     }
 
     h2 {
         text-align: center;
         margin-bottom: 2rem;
         animation-name: fade, fly, scale;
-        --fly-from: 0 -100px;
+        --fly-from: 50px -100px;
     }
 
     ol {
@@ -51,7 +91,7 @@
 
     li {
         animation-name: fade, fly;
-        --fly-from: 0 100px;
+        --fly-from: -75px 100px;
         position: relative;
         padding: 1rem 0.5rem;
     }
