@@ -111,15 +111,41 @@
         padding-bottom: 2rem;
     }
 
-    @media screen and (width < 480px) {
+    @media screen and (width <= 768px) {
+        section {
+            padding: 4rem 0.5rem;
+        }
+
         #team {
             flex-direction: column;
             padding-inline: 1rem;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .member {
-            padding-block: 2rem;
+            animation-duration: 500ms;
+            min-height: 25dvh;
+            --fly-from: 0 50px;
+        }
+
+        ul {
+            display: none;
+        }
+
+        .rajneesh {
+            background-position-y: 0%;
+        }
+
+        .member:nth-child(1) {
+            animation-delay: 500ms;
+        }
+
+        .member:nth-child(2) {
+            animation-delay: 650ms;
+        }
+
+        .member:nth-child(3) {
+            animation-delay: 800ms;
         }
     }
 </style>
