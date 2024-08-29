@@ -2,8 +2,10 @@
 
 <script>
     const copyright = document.getElementById("copyright")!;
-    const year = new Date().getFullYear().toString();
-    copyright.innerText = copyright.innerText.replace("YYYY", year);
+    copyright.innerText = copyright.innerText.replace(
+        "YYYY",
+        new Date().getFullYear().toString(),
+    );
 </script>
 
 <style>
