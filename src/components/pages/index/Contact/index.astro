@@ -1,64 +1,71 @@
 ---
 // Components
-import Map from "../../../Map.astro";
+import Details from "./Details.astro";
+import Map from "@components/Map.astro";
+import Form from "./Form.astro";
 ---
 
 <section id="contact">
-    <div class="container">
+    <div id="title">
         <p>Ready to embark on an adventure of a lifetime?</p>
         <h2>Contact Us</h2>
-        <div id="contact-main">
+    </div>
+    <div class="wrapper">
+        <div id="details" class="flex">
+            <Details />
+        </div>
+        <div id="map" class="flex">
             <Map />
-            <div id="contact-details">
-                <div><h3 class="bold">Mobile:</h3>7042065607</div>
-                <div><h3 class="bold">Email:</h3>admin@para-karam.com</div>
-                <div>
-                    <h3 class="bold">Address:</h3>309, Shopping Square 1, <br />
-                    Sector-D, Sushant Golf City, <br />
-                    Lucknow, Uttar Pradesh
-                </div>
-            </div>
+        </div>
+        <div id="form" class="flex">
+            <Form />
         </div>
     </div>
 </section>
 
 <style>
     #contact {
-        padding-block: 8rem;
-    }
-
-    .container {
+        max-width: 1680px;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .bold {
-        font-weight: bold;
-    }
-
-    #contact-main {
-        display: flex;
-        flex-direction: row;
         justify-content: center;
         align-items: center;
         gap: 4rem;
-        margin-top: 2rem;
+        padding: 8rem 2rem;
     }
 
-    @media screen and (width < 480px) {
-        #contact-main {
-            flex-direction: column-reverse;
-            text-align: center;
-        }
+    #title {
+        text-align: center;
     }
 
-    #contact-details {
-        display: flex;
-        flex-direction: column;
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
         gap: 2rem;
-        font-size: 1.25em;
+    }
+
+    @media screen and (width <= 1200px) {
+        #contact {
+            padding: 6rem 0rem 0rem 0rem;
+        }
+
+        .wrapper {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(auto-fit, 1fr);
+            gap: 4rem;
+        }
+
+        #form {
+            grid-row: 1;
+        }
+
+        #details {
+            grid-row: 2;
+        }
+
+        #map {
+            grid-row: 3;
+        }
     }
 </style>

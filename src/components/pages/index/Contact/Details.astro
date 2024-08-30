@@ -1,0 +1,47 @@
+<div id="contact-main">
+    <div id="contact-details">
+        <div id="phone">
+            <h3 class="font-bold">Mobile:</h3>
+            7042065607
+        </div>
+        <div id="email">
+            <h3 class="font-bold">Email:</h3>
+            admin@para-karam.com
+        </div>
+
+        <div id="address">
+            <h3 class="font-bold">Address:</h3>
+            <address>
+                309, Shopping Square 1, Sector-D, Sushant Golf City, Lucknow,
+                Uttar Pradesh - 226030
+            </address>
+        </div>
+    </div>
+</div>
+
+<style>
+    #contact-main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #contact-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 2rem;
+        text-align: right;
+        text-wrap: balance;
+    }
+
+    @media screen and (width <= 1200px) {
+        #contact-details {
+            align-items: center;
+            text-align: center;
+        }
+    }
+</style>
