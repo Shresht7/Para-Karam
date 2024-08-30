@@ -1,27 +1,46 @@
-<div>
-    <form>
-        <div>
-            <label for="name"></label>
-            <input name="name" type="text" />
-        </div>
+---
+// Components
+import Input from "@components/Input.astro";
+import Button from "@components/Button.astro";
+---
 
-        <div>
-            <label for="email"></label>
-            <input name="email" type="email" />
-        </div>
+<form>
+    <Input name="name" label="Name" type="text" />
 
-        <div>
-            <label for="phone"></label>
-            <input name="name" type="number" />
-        </div>
+    <Input name="email" label="Email" type="email" />
 
-        <div>
-            <label for="message"></label>
-            <textarea name="message"></textarea>
-        </div>
+    <Input name="phone" label="Phone Number" type="number" />
 
-        <div>
-            <button type="submit">Submit</button>
-        </div>
-    </form>
-</div>
+    <div>
+        <Button>Submit</Button>
+    </div>
+</form>
+
+<style>
+    form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding-right: 8rem;
+    }
+
+    div {
+        margin-top: 1rem;
+    }
+
+    @media screen and (width <= 768px) {
+        form {
+            padding: 2rem;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        div {
+            margin-top: 0.75rem;
+        }
+    }
+</style>
