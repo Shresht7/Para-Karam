@@ -6,7 +6,7 @@ import Form from "./Form.astro";
 ---
 
 <section id="contact">
-    <div id="title">
+    <div id="title" class="animate view-timeline">
         <p>Ready to embark on an adventure of a lifetime?</p>
         <h2>Contact Us</h2>
     </div>
@@ -14,7 +14,7 @@ import Form from "./Form.astro";
         <div id="details" class="flex">
             <Details />
         </div>
-        <div id="map" class="flex">
+        <div id="map" class="flex animate view-timeline">
             <Map />
         </div>
         <div id="form" class="flex">
@@ -37,12 +37,19 @@ import Form from "./Form.astro";
 
     #title {
         text-align: center;
+        animation-name: fade, fly;
+        --fly-from: 0px -25px;
     }
 
     .wrapper {
         display: grid;
         grid-template-columns: 1fr 2fr 2fr;
         gap: 2rem;
+    }
+
+    #map {
+        animation-name: fade, fly, scale;
+        --fly-from: 0 50px;
     }
 
     @media screen and (width <= 1200px) {

@@ -4,14 +4,14 @@ import Input from "@components/Input.astro";
 import Button from "@components/Button.astro";
 ---
 
-<form>
+<form class="animation-stagger">
     <Input name="name" label="Name" type="text" />
 
     <Input name="email" label="Email" type="email" />
 
     <Input name="phone" label="Phone Number" type="number" />
 
-    <div>
+    <div class="animate view-timeline">
         <Button>Submit</Button>
     </div>
 </form>
@@ -30,6 +30,8 @@ import Button from "@components/Button.astro";
 
     div {
         margin-top: 1rem;
+        animation-name: fade, fly;
+        --fly-from: 25px 0;
     }
 
     @media screen and (width <= 768px) {

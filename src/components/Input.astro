@@ -9,7 +9,7 @@ interface Props {
 const { name, label, type } = Astro.props;
 ---
 
-<div>
+<div class="animate view-timeline">
     <label for={name}>{label}</label>
     <input name={name} type={type} />
 </div>
@@ -22,6 +22,8 @@ const { name, label, type } = Astro.props;
         justify-content: center;
         align-items: flex-start;
         gap: 0.25rem;
+        animation-name: fade, fly;
+        --fly-from: 25px 0;
     }
 
     label {
