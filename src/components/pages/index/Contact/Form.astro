@@ -4,7 +4,8 @@ import Input from "@components/Input.astro";
 import Button from "@components/Button.astro";
 ---
 
-<form class="animation-stagger">
+<!-- @ts-ignore -->
+<form id="contact-form" class="animation-stagger" data-netlify method="post">
     <Input name="name" label="Name" type="text" />
 
     <Input name="email" label="Email" type="email" />
