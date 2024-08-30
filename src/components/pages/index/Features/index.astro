@@ -6,9 +6,21 @@ import FeaturesAnimation from "@components/FeaturesAnimation.astro";
 
 <section id="features">
     <ul class="container">
-        <Item text="Adventure filled activities" img="/camping.jpg" />
-        <Item text="Unique and thrilling experiences" img="background.jpg" />
-        <Item text="Expand your horizons" img="footer.jpg" />
+        <Item
+            text="Adventure filled activities"
+            img="/camping.jpg"
+            animationDelay="delay-1"
+        />
+        <Item
+            text="Unique and thrilling experiences"
+            img="background.jpg"
+            animationDelay="delay-2"
+        />
+        <Item
+            text="Expand your horizons"
+            img="footer.jpg"
+            animationDelay="delay-3"
+        />
     </ul>
     <FeaturesAnimation />
 </section>

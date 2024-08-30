@@ -4,11 +4,12 @@ interface Props {
     img?: string;
     alt?: string;
     text: string;
+    animationDelay?: string;
 }
-const { img, alt, text } = Astro.props;
+const { img, alt, text, animationDelay } = Astro.props;
 ---
 
-<li>
+<li class="animate view-timeline" class:list={[animationDelay]}>
     <div id="image-container">
         <img src={img} alt={alt} />
     </div>
@@ -26,6 +27,8 @@ const { img, alt, text } = Astro.props;
         justify-content: center;
         align-items: center;
         gap: 1.25rem;
+        animation-name: fade, fly, scale;
+        --fly-from: -50px -20px;
     }
 
     #image-container {
@@ -37,9 +40,19 @@ const { img, alt, text } = Astro.props;
         overflow: hidden;
     }
 
+    .delay-1 {
+        animation-delay: 150ms;
+    }
+
+    .delay-2 {
+        animation-delay: 400ms;
+    }
+
+    .delay-3 {
+        animation-delay: 750ms;
+    }
+
     img {
         width: var(--size);
     }
-
-
 </style>
