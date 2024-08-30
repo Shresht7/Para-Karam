@@ -25,7 +25,7 @@ const { img, text, animationDelay } = Astro.props;
         align-items: center;
         gap: 1.5rem;
         animation-name: fade, fly, scale;
-        --fly-from: -50px -20px;
+        --fly-from: 0px 100px;
         z-index: 4;
         transition: transform var(--transition-duration);
     }
@@ -55,11 +55,11 @@ const { img, text, animationDelay } = Astro.props;
     }
 
     .delay-2 {
-        animation-delay: 400ms;
+        animation-delay: 75ms;
     }
 
     .delay-3 {
-        animation-delay: 750ms;
+        animation-delay: 250ms;
     }
 
     img {
