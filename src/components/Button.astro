@@ -5,13 +5,14 @@ interface Props {
     color?: "white" | "blue";
     variant?: "solid" | "outline";
     size?: "small" | "large";
+    btnType?: "button" | "submit";
 }
-const { id, size } = Astro.props;
+const { id, size, btnType = "button" } = Astro.props;
 const variant = Astro.props.variant ?? "solid";
 const color = Astro.props.color ?? "blue";
 ---
 
-<button id={id} type="button" class:list={[color, variant, size]}>
+<button id={id} type={btnType} class:list={[color, variant, size]}>
     <slot />
 </button>
 
@@ -19,11 +20,14 @@ const color = Astro.props.color ?? "blue";
     button {
         padding: 0.5rem 1rem;
         border-radius: 100px;
-        transition: transform 100ms ease-in-out, outline 100ms ease-out;
+        transition:
+            transform 100ms ease-in-out,
+            outline 100ms ease-out;
         outline: 0px solid var(--color-white);
     }
 
-    button:hover, button:focus {
+    button:hover,
+    button:focus {
         transform: scale(1.05);
         outline-width: 3px;
         outline-offset: 4px;
