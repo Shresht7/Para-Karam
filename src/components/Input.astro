@@ -5,14 +5,23 @@ interface Props {
     label: string;
     type?: any;
     isTextArea?: boolean;
+    required?: boolean;
 }
 
-const { name, label, type, isTextArea } = Astro.props;
+const { name, label, type, isTextArea, required } = Astro.props;
 ---
 
 <div class="animate view-timeline">
-    <label for={name}>{label}</label>
-    {!isTextArea ? <input name={name} type={type} /> : <textarea name={name} />}
+    <label for={name}>
+        {required ? `${label}*` : `${label} (Optional)`}
+    </label>
+    {
+        !isTextArea ? (
+            <input name={name} type={type} required={required} />
+        ) : (
+            <textarea name={name} />
+        )
+    }
 </div>
 
 <style>
