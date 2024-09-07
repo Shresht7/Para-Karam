@@ -1,9 +1,12 @@
 ---
 // Components
 import Button from "../../../Button.astro";
+
+// Assets
+import background from "@assets/images/background.jpg";
 ---
 
-<section>
+<section style={`background-image: url("${background.src}")`}>
     <div id="hero-container" class="container animate">
         <div id="call-to-action">
             <div id="cta-text">
@@ -14,7 +17,9 @@ import Button from "../../../Button.astro";
                 <Button id="book-now" variant="solid" color="white" size="large"
                     >Book Now!</Button
                 >
-                <Button id="explore" variant="outline" size="large">Explore</Button>
+                <Button id="explore" variant="outline" size="large"
+                    >Explore</Button
+                >
             </div>
         </div>
         <div></div>
@@ -23,14 +28,14 @@ import Button from "../../../Button.astro";
 
 <script>
     import { navigate } from "astro:transitions/client";
-    
+
     document.addEventListener("astro:page-load", () => {
         let bookNow = document.getElementById("book-now");
-        bookNow?.addEventListener('click', () => navigate("#contact"))
-        
+        bookNow?.addEventListener("click", () => navigate("#contact"));
+
         let explore = document.getElementById("explore");
-        explore?.addEventListener('click', () => navigate("#about-us"))
-    })
+        explore?.addEventListener("click", () => navigate("#about-us"));
+    });
 </script>
 
 <!-- Photo by <a href="https://unsplash.com/@awbraga?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alex Braga</a> on <a href="https://unsplash.com/photos/a-person-is-parasailing-in-the-blue-sky-_uCIkkXC2ns?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
@@ -38,7 +43,6 @@ import Button from "../../../Button.astro";
 <style>
     section {
         min-height: 100dvh;
-        background-image: url("/background.jpg");
         background-size: cover;
         background-position: 0% 65%;
     }
@@ -50,7 +54,9 @@ import Button from "../../../Button.astro";
         justify-content: space-between;
         align-items: center;
         --fly-from: 0 40px;
-        animation: fade 500ms 750ms both, fly 500ms 750ms both;
+        animation:
+            fade 500ms 750ms both,
+            fly 500ms 750ms both;
     }
 
     #hero-container > div {
@@ -85,13 +91,12 @@ import Button from "../../../Button.astro";
         gap: 2rem;
     }
 
-    
     @media screen and (width < 480px) {
         section {
             background-position: 45% 45%;
         }
 
-        #call-to-action {            
+        #call-to-action {
             background-color: rgba(255, 255, 255, 0.15);
             color: var(--color-black);
             padding-block: 5rem;

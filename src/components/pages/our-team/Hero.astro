@@ -1,4 +1,9 @@
-<section>
+---
+// Assets
+import camping from "@assets/images/camping.jpg";
+---
+
+<section style={`background-image: url("${camping.src}")`}>
     <div class="container">
         <h1>OUR TEAM</h1>
     </div>
@@ -7,7 +12,6 @@
 <style>
     section {
         min-height: 10dvh;
-        background-image: url("/camping.jpg");
         background-size: cover;
         color: var(--color-white);
     }

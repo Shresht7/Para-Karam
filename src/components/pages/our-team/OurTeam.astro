@@ -1,6 +1,16 @@
+---
+// Assets
+import ramesh from "@assets/images/ramesh.jpg";
+import rajneesh from "@assets/images/rajneesh.jpg";
+import sanjay from "@assets/images/sanjay.jpg";
+---
+
 <section>
     <div id="team">
-        <div class="member ramesh animate">
+        <div
+            class="member ramesh animate"
+            style={`background-image: url("${ramesh.src}")`}
+        >
             <h2>Group Captain Ramesh Mishra VM (Retd.)</h2>
             <ul>
                 <li>
@@ -14,7 +24,10 @@
                 <li>Adventure Sports Trainer</li>
             </ul>
         </div>
-        <div class="member rajneesh animate">
+        <div
+            class="member rajneesh animate"
+            style={`background-image: url("${rajneesh.src}")`}
+        >
             <h2>Wing Commander Rajneesh Seth (Retd.)</h2>
             <ul>
                 <li>Businessman</li>
@@ -22,7 +35,10 @@
                 <li>Quality-Assurance Consultant</li>
             </ul>
         </div>
-        <div class="member sanjay animate">
+        <div
+            class="member sanjay animate"
+            style={`background-image: url("${sanjay.src}")`}
+        >
             <h2>Group Captain (Dr.) Sanjay Srivastav (Retd.)</h2>
             <ul>
                 <li>Alumni of IIM Lucknow</li>
@@ -73,17 +89,14 @@
     }
 
     .ramesh {
-        background-image: url("/ramesh.jpg");
         --fly-from: -100px 0;
     }
 
     .rajneesh {
-        background-image: url("/rajneesh.jpg");
         --fly-from: 0 0;
     }
 
     .sanjay {
-        background-image: url("/sanjay.jpg");
         background-position: 0%;
         --fly-from: 100px 0;
     }

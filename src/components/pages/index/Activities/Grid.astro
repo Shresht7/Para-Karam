@@ -1,14 +1,34 @@
+---
+// Assets
+import camping from "@assets/images/camping.jpg";
+import footer from "@assets/images/camping.jpg";
+import background from "@assets/images/background.jpg";
+import trekking from "@assets/images/trekking.jpg";
+---
+
 <div id="grid">
-    <div class="grid-item top animate view-timeline">
+    <div
+        class="grid-item top animate view-timeline"
+        style={`background-image: url("${camping.src}")`}
+    >
         Camping
     </div>
-    <div class="grid-item side animate view-timeline">
+    <div
+        class="grid-item side animate view-timeline"
+        style={`background-image: url("${footer.src}")`}
+    >
         Parasailing
     </div>
-    <div class="grid-item bottom-1 animate view-timeline">
+    <div
+        class="grid-item bottom-1 animate view-timeline"
+        style={`background-image: url("${background.src}")`}
+    >
         Adventure Sports
     </div>
-    <div class="grid-item bottom-2 animate view-timeline">
+    <div
+        class="grid-item bottom-2 animate view-timeline"
+        style={`background-image: url("${trekking.src}")`}
+    >
         Trekking
     </div>
 </div>
@@ -70,7 +90,6 @@
         grid-column: 1 / 3;
         grid-row: 1 / 1;
         height: 16rem;
-        background-image: url("/camping.jpg");
         background-size: cover;
         background-position: 0 100%;
         --fly-from: -50px 0px;
@@ -79,21 +98,18 @@
     #grid .side {
         grid-column: 3 / 4;
         grid-row: 1 / 3;
-        background-image: url("/footer.jpg");
         background-size: cover;
         background-position: 30% 0%;
         --fly-from: 75px 0;
     }
 
     #grid .bottom-1 {
-        background-image: url("/background.jpg");
         background-size: cover;
         background-position: 80% 0%;
         --fly-from: -75px 0;
     }
 
     #grid .bottom-2 {
-        background-image: url("/trekking.jpg");
         background-size: cover;
         background-position: 30% 0%;
         --fly-from: 0 60px;
