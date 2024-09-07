@@ -1,26 +1,30 @@
+---
+// Assets
+import background from "@assets/images/vincentiu-solomon-R86bzJSneuw-unsplash.jpg";
+---
+
 <section>
-    <div class="container">
-        <h2 class="animate view-timeline">Our Vision</h2>
-        <ol>
-            <li class="animate view-timeline">
-                To inspire and empower youth through adventure sports, fostering
-                physical fitness, mental resilience, and a spirit of teamwork
-                and discipline.
-            </li>
-            <li class="animate view-timeline">
-                To provide safe, exciting, and educational adventure experiences
-                that promote personal growth, environmental stewardship, and a
-                life-long love for outdoor activities.
-            </li>
-            <li class="animate view-timeline">
-                To provide unique and thrilling experiences
-            </li>
-            <li class="animate view-timeline">
-                Inspiring the youth of Uttar Pradesh to join the defence
-                services
-            </li>
-        </ol>
-    </div>
+    <img src={background.src} alt="" />
+    <div class="container"></div>
+    <h2 class="animate view-timeline">Our Vision</h2>
+    <ol>
+        <li class="animate view-timeline">
+            To inspire and empower youth through adventure sports, fostering
+            physical fitness, mental resilience, and a spirit of teamwork and
+            discipline.
+        </li>
+        <li class="animate view-timeline">
+            To provide safe, exciting, and educational adventure experiences
+            that promote personal growth, environmental stewardship, and a
+            life-long love for outdoor activities.
+        </li>
+        <li class="animate view-timeline">
+            To provide unique and thrilling experiences
+        </li>
+        <li class="animate view-timeline">
+            Inspiring the youth of Uttar Pradesh to join the defence services
+        </li>
+    </ol>
 </section>
 
 <style>
@@ -32,6 +36,12 @@
         align-items: center;
         padding: 8rem 2rem;
         position: relative;
+    }
+
+    img {
+        position: absolute;
+        inset: 0 0;
+        z-index: -1;
     }
 
     section::after,
@@ -64,14 +74,6 @@
             backdrop-filter: blur(20px);
             transform: translate(10%) skew(-15deg);
         }
-    }
-
-    section::before {
-        background-image: url("/vincentiu-solomon-R86bzJSneuw-unsplash.jpg");
-        background-size: cover;
-        background-position-x: 10%;
-        background-position-y: 10%;
-        overflow: hidden;
     }
 
     h2 {
