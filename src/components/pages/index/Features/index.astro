@@ -2,23 +2,28 @@
 // Components
 import Item from "./Item.astro";
 import FeaturesAnimation from "@components/FeaturesAnimation.astro";
+
+// Assets
+import camping from "@assets/images/camping.jpg";
+import background from "@assets/images/background.jpg";
+import footer from "@assets/images/footer.jpg";
 ---
 
 <section id="features">
     <ul class="container">
         <Item
             text="Adventure filled activities"
-            img="camping.jpg"
+            img={camping.src}
             animationDelay="delay-1"
         />
         <Item
             text="Unique and thrilling experiences"
-            img="background.jpg"
+            img={background.src}
             animationDelay="delay-2"
         />
         <Item
             text="Expand your horizons"
-            img="footer.jpg"
+            img={footer.src}
             animationDelay="delay-3"
         />
     </ul>
