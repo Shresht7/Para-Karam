@@ -14,13 +14,13 @@ const {
 } = Astro.props;
 ---
 
-<a href="/" id="logo-container">
-    {icon && <img id="logo" src="/favicon.svg" alt="logo" />}
-    {text && <div id="name">Para-Karam</div>}
+<a href="/" class="logo-container">
+    {icon && <img class="logo" src="/favicon.svg" alt="logo" />}
+    {text && <div class="name">Para-Karam</div>}
 </a>
 
 <style define:vars={{ iconSize, fontSize }}>
-    #logo-container {
+    .logo-container {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -30,13 +30,13 @@ const {
         transition: all var(--transition-duration);
     }
 
-    #logo-container:hover,
-    #logo-container:focus {
+    .logo-container:hover,
+    .logo-container:focus {
         color: var(--color-white);
         text-shadow: 0 0 16px var(--color-white);
     }
 
-    #logo {
+    .logo {
         width: var(--iconSize);
         height: var(--iconSize);
         aspect-ratio: 1 / 1;
@@ -44,25 +44,25 @@ const {
         transition: all var(--transition-duration);
     }
 
-    #logo-container:hover #logo,
-    #logo-container:focus #logo {
+    .logo-container:hover .logo,
+    .logo-container:focus .logo {
         scale: 1.05;
         box-shadow: 0 0 4px 2px var(--color-white);
     }
 
     @container (width <= 768px) {
-        #logo-container {
+        .logo-container {
             flex-direction: column;
             justify-content: center;
         }
 
-        #logo {
+        .logo {
             width: calc(2 * var(--iconSize));
             height: calc(2 * var(--iconSize));
         }
     }
 
-    #name {
+    .name {
         font-size: var(--fontSize);
         text-wrap: nowrap;
     }
