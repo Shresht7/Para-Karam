@@ -9,7 +9,8 @@ const { img, text, animationDelay } = Astro.props;
 ---
 
 <li class="animate view-timeline" class:list={[animationDelay]}>
-    <div id="image-container" style={`background-image: url('${img}')`}></div>
+    <div id="image-container" style={{ backgroundImage: `url('${img}')` }}>
+    </div>
     <div>
         <p>{text}</p>
     </div>
