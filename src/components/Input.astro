@@ -17,7 +17,13 @@ const { name, label, type, isTextArea, required } = Astro.props;
     </label>
     {
         !isTextArea ? (
-            <input id={name} name={name} type={type} required={required} />
+            <input
+                id={name}
+                name={name}
+                type={type}
+                required={required}
+                autocomplete={type}
+            />
         ) : (
             <textarea name={name} />
         )
