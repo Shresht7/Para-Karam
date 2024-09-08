@@ -1,0 +1,36 @@
+---
+// Types
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/images/*.{jpeg,jpg,png,gif}",
+);
+---
+
+<div id="gallery">
+    {
+        Object.entries(images).map(([x, fn]) => (
+            <div class="image-wrapper">
+                <Image src={fn()} alt="" width={400} height={300} />
+            </div>
+        ))
+    }
+</div>
+
+<style>
+    #gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        padding: 8rem 4rem;
+    }
+
+    .image-wrapper {
+        width: fit-content;
+        box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.125);
+    }
+</style>
