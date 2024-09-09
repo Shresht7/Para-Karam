@@ -5,9 +5,11 @@ import ScrollProgressBar from "@components/ScrollProgressBar.astro";
 
 // Props
 interface Props {
-	title: string;
+	title?: string;
+	description?: string;
+	author?: string;
 }
-const { title } = Astro.props;
+const { title, description, author } = Astro.props;
 
 // Styles
 import "@styles/global.css";
@@ -17,19 +19,21 @@ import "@styles/utility.css";
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
+	<meta />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="generator" content={Astro.generator} />
 
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="sitemap" href="/sitemap-index.xml" />
+	<meta name="title" content={title} />
+	<meta name="description" content={description} />
+	<meta name="author" content={author} />
 
-		<ViewTransitions />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="sitemap" href="/sitemap-index.xml" />
 
-		<title>{title}</title>
-	</head>
+	<ViewTransitions />
+
+	<title>{title}</title>
 
 	<body>
 		<ScrollProgressBar />
