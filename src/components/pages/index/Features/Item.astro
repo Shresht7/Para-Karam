@@ -4,12 +4,16 @@ interface Props {
     img?: string;
     text: string;
     animationDelay?: string;
+    backgroundPosition?: string;
 }
-const { img, text, animationDelay } = Astro.props;
+const { img, text, animationDelay, backgroundPosition } = Astro.props;
 ---
 
 <li class="animate view-timeline" class:list={[animationDelay]}>
-    <div id="image-container" style={{ backgroundImage: `url('${img}')` }}>
+    <div
+        id="image-container"
+        style={{ backgroundImage: `url('${img}')`, backgroundPosition }}
+    >
     </div>
     <div>
         <p>{text}</p>
