@@ -2,13 +2,23 @@
 // Components
 import Socials from "./Socials.astro";
 import PhoneNumber from "../PhoneNumber.astro";
+
+// Assets
+import Phone from "@components/icons/Phone.astro";
+import Email from "@components/icons/Email.astro";
 ---
 
 <div id="contact-details" class="animation-stagger">
     <div id="title">Contact Us</div>
     <div id="details">
-        <PhoneNumber tel={7042064607} />
-        <p>admin@para-karam.com</p>
+        <div class="element">
+            <PhoneNumber tel={7042064607} />
+            <Phone />
+        </div>
+        <div class="element">
+            <p>admin@para-karam.com</p>
+            <Email />
+        </div>
     </div>
     <Socials />
 </div>
@@ -46,5 +56,17 @@ import PhoneNumber from "../PhoneNumber.astro";
     #title {
         font-weight: bold;
         animation-delay: 250ms;
+    }
+
+    .element {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .icon {
+        color: white;
     }
 </style>
