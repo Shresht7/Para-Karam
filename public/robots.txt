@@ -4,4 +4,4 @@ User-agent: *
 Allow: /
 
 # Link the sitemap
-Sitemap: https://www.para-karam.com/sitemap-index.html
+Sitemap: https://www.para-karam.com/sitemap-index.xml
