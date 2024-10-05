@@ -1,9 +1,21 @@
 ---
+// Library
+import { getImage } from "astro:assets";
+
 // Assets
 import camping from "@assets/images/camping1.jpg";
+
+const optimizedCampingImage = await getImage({
+    src: camping,
+    width: 768,
+    loading: "eager",
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
 ---
 
-<section style={{ backgroundImage: `url("${camping.src}")` }}>
+<section style={{ backgroundImage: `url("${optimizedCampingImage.src}")` }}>
     <div class="container">
         <h1>OUR TEAM</h1>
     </div>
