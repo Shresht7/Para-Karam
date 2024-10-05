@@ -1,33 +1,68 @@
 ---
+// Library
+import { getImage } from "astro:assets";
+
 // Assets
 import camping from "@assets/images/camping1.jpg";
 import paragliding from "@assets/images/paragliding1.jpg";
 import parasailing from "@assets/images/parasailing1.jpg";
 import trekking from "@assets/images/trekking.jpg";
+
+const optimizedCamping = await getImage({
+    src: camping,
+    width: 560,
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
+
+const optimizedParagliding = await getImage({
+    src: paragliding,
+    width: 1080,
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
+
+const optimizedParasailing = await getImage({
+    src: parasailing,
+    width: 560,
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
+
+const optimizedTrekking = await getImage({
+    src: trekking,
+    width: 560,
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
 ---
 
 <div id="grid">
     <div
         class="grid-item top animate view-timeline"
-        style={{ backgroundImage: `url("${camping.src}")` }}
+        style={{ backgroundImage: `url("${optimizedCamping.src}")` }}
     >
         Camping
     </div>
     <div
         class="grid-item side animate view-timeline"
-        style={{ backgroundImage: `url("${paragliding.src}")` }}
+        style={{ backgroundImage: `url("${optimizedParagliding.src}")` }}
     >
         Parasailing
     </div>
     <div
         class="grid-item bottom-1 animate view-timeline"
-        style={{ backgroundImage: `url("${parasailing.src}")` }}
+        style={{ backgroundImage: `url("${optimizedParasailing.src}")` }}
     >
         Adventure Sports
     </div>
     <div
         class="grid-item bottom-2 animate view-timeline"
-        style={{ backgroundImage: `url("${trekking.src}")` }}
+        style={{ backgroundImage: `url("${optimizedTrekking.src}")` }}
     >
         Trekking
     </div>
