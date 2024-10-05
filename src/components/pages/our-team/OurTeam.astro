@@ -1,15 +1,45 @@
 ---
+// Library
+import { getImage } from "astro:assets";
+
 // Assets
 import ramesh from "@assets/images/ramesh.jpg";
 import rajneesh from "@assets/images/rajneesh.jpg";
 import sanjay from "@assets/images/sanjay.jpg";
+
+const optimizedRamesh = await getImage({
+    src: ramesh,
+    width: 560,
+    loading: "eager",
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
+
+const optimizedRajneesh = await getImage({
+    src: rajneesh,
+    width: 560,
+    loading: "eager",
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
+
+const optimizedSanjay = await getImage({
+    src: sanjay,
+    width: 560,
+    loading: "eager",
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
 ---
 
 <section>
     <div id="team">
         <div
             class="member ramesh animate"
-            style={{ backgroundImage: `url("${ramesh.src}")` }}
+            style={{ backgroundImage: `url("${optimizedRamesh.src}")` }}
         >
             <h2>Group Captain Ramesh Mishra VM (Retd.)</h2>
             <ul>
@@ -26,7 +56,7 @@ import sanjay from "@assets/images/sanjay.jpg";
         </div>
         <div
             class="member rajneesh animate"
-            style={{ backgroundImage: `url("${rajneesh.src}")` }}
+            style={{ backgroundImage: `url("${optimizedRajneesh.src}")` }}
         >
             <h2>Wing Commander Rajneesh Seth (Retd.)</h2>
             <ul>
@@ -37,7 +67,7 @@ import sanjay from "@assets/images/sanjay.jpg";
         </div>
         <div
             class="member sanjay animate"
-            style={{ backgroundImage: `url("${sanjay.src}")` }}
+            style={{ backgroundImage: `url("${optimizedSanjay.src}")` }}
         >
             <h2>Group Captain (Dr.) Sanjay Srivastav (Retd.)</h2>
             <ul>
