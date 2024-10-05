@@ -1,4 +1,7 @@
 ---
+// Library
+import { getImage } from "astro:assets";
+
 // Components
 import Logo from "@components/Logo.astro";
 import Contact from "./Contact.astro";
@@ -6,11 +9,19 @@ import Copyright from "./Copyright.astro";
 
 // Assets
 import background from "@assets/images/paragliding1.jpg";
+
+const optimizedBackgroundImage = await getImage({
+    src: background,
+    width: 1920,
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
 ---
 
 <!-- Photo by <a href="https://unsplash.com/@chrisk91?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Christian J.</a> on <a href="https://unsplash.com/photos/a-person-is-parasailing-in-the-sky-at-sunset-Ejlj69BGyoE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
    -->
-<footer style={{ backgroundImage: `url(${background.src})` }}>
+<footer style={{ backgroundImage: `url(${optimizedBackgroundImage.src})` }}>
     <div id="footer-info">
         <div class="logo flex animate view-timeline"><Logo /></div>
         <div class="contact flex animate view-timeline"><Contact /></div>
