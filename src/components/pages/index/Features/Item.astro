@@ -1,18 +1,32 @@
 ---
+// Library
+import { getImage } from "astro:assets";
+
 // Props
 interface Props {
-    img?: string;
+    img: ImageMetadata;
     text: string;
     animationDelay?: string;
     backgroundPosition?: string;
 }
 const { img, text, animationDelay, backgroundPosition } = Astro.props;
+
+const optimizedImg = await getImage({
+    src: img,
+    width: 480,
+    format: "avif",
+    fallbackFormat: "webp",
+    quality: "mid",
+});
 ---
 
 <li class="animate view-timeline" class:list={[animationDelay]}>
     <div
         id="image-container"
-        style={{ backgroundImage: `url('${img}')`, backgroundPosition }}
+        style={{
+            backgroundImage: `url('${optimizedImg.src}')`,
+            backgroundPosition,
+        }}
     >
     </div>
     <div>

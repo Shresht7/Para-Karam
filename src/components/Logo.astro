@@ -1,21 +1,40 @@
 ---
+// Components
+import { Image } from "astro:assets";
+
+// Assets
+import logo from "@assets/logo.png";
+
 // Props
 interface Props {
     icon?: boolean;
     text?: boolean;
     fontSize?: string;
-    iconSize?: string;
+    iconSize?: number;
 }
 const {
     icon = true,
     text = true,
-    iconSize = "48px",
+    iconSize = 48,
     fontSize = "2rem",
 } = Astro.props;
 ---
 
 <a href="/" class="logo-container">
-    {icon && <img class="logo" src="/logo.jpg" alt="logo" />}
+    {
+        icon && (
+            <div class="logo">
+                <Image
+                    src={logo}
+                    alt="logo"
+                    width={iconSize}
+                    height={iconSize}
+                    format="avif"
+                    quality="max"
+                />
+            </div>
+        )
+    }
     {text && <div class="name">Para-Karam</div>}
 </a>
 
@@ -42,6 +61,7 @@ const {
         aspect-ratio: 1 / 1;
         border-radius: 50%;
         transition: all var(--transition-duration);
+        overflow: hidden;
     }
 
     .logo-container:hover .logo,
