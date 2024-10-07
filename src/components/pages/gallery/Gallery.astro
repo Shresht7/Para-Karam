@@ -39,10 +39,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             const boundingRect: any = m.currentTarget?.getBoundingClientRect();
             const x = m.clientX - boundingRect.left;
             const y = m.clientY - boundingRect.top;
-            const xDeg = (x / boundingRect?.width - 0.5) * 1;
-            const yDeg = (0.5 - y / boundingRect?.height) * 1;
+            const xRatio = x / boundingRect?.width;
+            const yRatio = y / boundingRect?.height;
+            const xDeg = (xRatio - 0.5) * 1;
+            const yDeg = (0.5 - yRatio) * 1;
             e.style.setProperty("--x-rotation", `${yDeg}deg`);
             e.style.setProperty("--y-rotation", `${xDeg}deg`);
+            e.style.setProperty("--mouse-x-percentage", `${xRatio * 100}%`);
+            e.style.setProperty("--mouse-y-percentage", `${yRatio * 100}%`);
         });
         // When the mouse leaves the picture card, reset tilt
         e.addEventListener("mouseleave", () => {
@@ -78,6 +82,22 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         transition:
             box-shadow var(--transition-duration),
             transform 50ms ease-out;
+        position: relative;
+    }
+
+    .image-wrapper::after {
+        content: "";
+        position: absolute;
+        inset: 0 0;
+        pointer-events: none;
+    }
+
+    .image-wrapper:hover::after {
+        background: radial-gradient(
+            at var(--mouse-x-percentage) var(--mouse-y-percentage),
+            rgba(255, 255, 255, 0.1) 20%,
+            transparent 100%
+        );
     }
 
     .image-wrapper:hover {
