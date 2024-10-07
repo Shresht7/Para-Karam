@@ -102,7 +102,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
     .image-wrapper:hover {
         transform: rotateX(var(--x-rotation)) rotateY(var(--y-rotation))
-            scale(1.05);
+            scale(1.075);
         box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
@@ -113,8 +113,5 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     #gallery:has(.img:hover) .image-wrapper:not(:hover) {
         transform: scale(0.95);
         filter: grayscale(0.5) blur(2px);
-    }
-
-    #gallery:has(.img:hover) .img:not(:hover) {
     }
 </style>
