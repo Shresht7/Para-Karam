@@ -1,4 +1,19 @@
-<section>
+---
+// Library
+import { getImage } from "astro:assets";
+
+// Assets
+import background from "@assets/images/adventure-kit.jpg";
+
+const optimizedBackgroundImage = await getImage({
+    src: background,
+    width: 1920,
+    format: "avif",
+    quality: "mid",
+});
+---
+
+<section style={`background-image: url("${optimizedBackgroundImage.src}")`}>
     <div class="container">
         <h1>Gallery</h1>
     </div>
@@ -6,19 +21,27 @@
 
 <style>
     section {
-        min-height: 30dvh;
+        min-height: 40dvh;
         background-color: var(--color-blue);
+        position: relative;
+    }
+
+    section::after {
+        content: "";
+        position: absolute;
+        inset: 0 0;
     }
 
     div {
         height: 100%;
         display: grid;
         place-content: center;
-        padding-top: 10dvh;
+        padding-top: 18dvh;
     }
 
     h1 {
         font-size: calc(2 * var(--font-size-xxl));
         color: var(--color-white);
+        z-index: 10;
     }
 </style>
