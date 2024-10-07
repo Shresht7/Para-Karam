@@ -1,18 +1,19 @@
 ---
+// Types
+import type { HTMLAttributes } from "astro/types";
+
 // Props
-interface Props {
-    id?: string;
+interface Props extends HTMLAttributes<"button"> {
     color?: "white" | "blue";
     variant?: "solid" | "outline";
     size?: "small" | "large";
-    btnType?: "button" | "submit";
 }
-const { id, size, btnType = "button" } = Astro.props;
+const { size, ...rest } = Astro.props;
 const variant = Astro.props.variant ?? "solid";
 const color = Astro.props.color ?? "blue";
 ---
 
-<button id={id} type={btnType} class:list={[color, variant, size]}>
+<button class:list={[color, variant, size]} {...rest}>
     <slot />
 </button>
 
