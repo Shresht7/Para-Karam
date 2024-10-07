@@ -27,6 +27,31 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     }
 </div>
 
+<script>
+    const imageWrappers = document.querySelectorAll(
+        ".image-wrapper",
+    ) as NodeListOf<HTMLDivElement>;
+
+    imageWrappers.forEach((e) => {
+        // When we mouse over the picture card, apply perspective tilt
+        e.addEventListener("mousemove", (m) => {
+            // @ts-ignore Typescript doesn't like getBoundingClientRect()
+            const boundingRect: any = m.currentTarget?.getBoundingClientRect();
+            const x = m.clientX - boundingRect.left;
+            const y = m.clientY - boundingRect.top;
+            const xDeg = (x / boundingRect?.width - 0.5) * 1;
+            const yDeg = (0.5 - y / boundingRect?.height) * 1;
+            e.style.setProperty("--x-rotation", `${yDeg}deg`);
+            e.style.setProperty("--y-rotation", `${xDeg}deg`);
+        });
+        // When the mouse leaves the picture card, reset tilt
+        e.addEventListener("mouseleave", () => {
+            e.style.setProperty("--x-rotation", "0deg");
+            e.style.setProperty("--y-rotation", "0deg");
+        });
+    });
+</script>
+
 <style>
     #gallery {
         display: flex;
@@ -36,6 +61,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         gap: 1.5rem;
         flex-wrap: wrap;
         padding: 8rem 4rem;
+        perspective: 2400px;
     }
 
     @media screen and (width <= 768px) {
@@ -45,8 +71,19 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     }
 
     .image-wrapper {
+        --x-rotation: 0;
+        --y-rotation: 0;
         box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.125);
         --fade-from: 25%;
+        transition:
+            box-shadow var(--transition-duration),
+            transform 50ms ease-out;
+    }
+
+    .image-wrapper:hover {
+        transform: rotateX(var(--x-rotation)) rotateY(var(--y-rotation))
+            scale(1.05);
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
     .img {
