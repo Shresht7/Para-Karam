@@ -3,6 +3,9 @@
 import { ViewTransitions } from "astro:transitions";
 import ScrollProgressBar from "@components/ScrollProgressBar.astro";
 
+// Metadata
+import metadata from "@src/data/metadata.json";
+
 // Props
 interface Props {
 	title?: string;
@@ -10,11 +13,12 @@ interface Props {
 	author?: string;
 	ogImage?: string;
 }
+
 const {
-	title = "Para-Karam",
-	description = "We are Para-Karam, an organization dedicated to fostering a spirit of adventure and resilience amoung youth through exciting and safe adventure activities. We aim to boost adventure sports and create opportunities for adventure enthusiasts.",
+	title = metadata.title,
+	description = metadata.description,
+	ogImage = metadata.ogImage,
 	// author,
-	ogImage = "/logo.png",
 } = Astro.props;
 
 // Styles
@@ -31,6 +35,7 @@ import "@styles/utility.css";
 
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
+	<link rel="icon" type="image/png" href="/logo.png" />
 	<!-- <meta name="author" content={author} /> -->
 
 	<meta property="og:url" content={Astro.url} />
@@ -45,8 +50,9 @@ import "@styles/utility.css";
 	<meta name="twitter:image" content={new URL(ogImage, Astro.url)} />
 	<meta name="twitter:card" content="summary_large_image" />
 
-	<link rel="icon" type="image/png" href="/logo.png" />
 	<link rel="sitemap" href="/sitemap-index.xml" />
+
+	<ViewTransitions />
 
 	<title>{title}</title>
 
