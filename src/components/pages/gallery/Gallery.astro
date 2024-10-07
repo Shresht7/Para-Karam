@@ -15,7 +15,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     {
         Object.entries(images).map(([x, fn]) => (
             <div class="image-wrapper animate view-timeline">
-                <Image src={fn()} alt="" format="avif" height={400} />
+                <Image
+                    src={fn()}
+                    alt=""
+                    format="avif"
+                    height={400}
+                    class="img"
+                />
             </div>
         ))
     }
@@ -41,5 +47,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     .image-wrapper {
         box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.125);
         --fade-from: 25%;
+    }
+
+    .img {
+        padding: 0.33rem;
     }
 </style>
