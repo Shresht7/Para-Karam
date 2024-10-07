@@ -109,4 +109,12 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     .img {
         padding: 0.33rem;
     }
+
+    #gallery:has(.img:hover) .image-wrapper:not(:hover) {
+        transform: scale(0.95);
+        filter: grayscale(0.8) blur(2px);
+    }
+
+    #gallery:has(.img:hover) .img:not(:hover) {
+    }
 </style>
