@@ -1,8 +1,11 @@
 ---
-// Types
-import type { ImageMetadata } from "astro";
+// Library
 import { Image } from "astro:assets";
 
+// Types
+import type { ImageMetadata } from "astro";
+
+// Gallery Images
 const images = import.meta.glob<{ default: ImageMetadata }>(
     "/src/assets/images/*.{jpeg,jpg,png,gif}",
 );
@@ -12,7 +15,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     {
         Object.entries(images).map(([x, fn]) => (
             <div class="image-wrapper animate view-timeline">
-                <Image src={fn()} alt="" width={400} height={300} />
+                <Image src={fn()} alt="" format="avif" height={400} />
             </div>
         ))
     }
@@ -23,14 +26,19 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         gap: 1.5rem;
         flex-wrap: wrap;
         padding: 8rem 4rem;
     }
 
+    @media screen and (width <= 768px) {
+        #gallery {
+            padding: 4rem 1.5rem;
+        }
+    }
+
     .image-wrapper {
-        width: fit-content;
         box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.125);
         --fade-from: 25%;
     }
