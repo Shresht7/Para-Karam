@@ -2,9 +2,15 @@
 // Components
 import Logo from "@components/Logo.astro";
 import Navigation from "./Navigation.astro";
+
+// Props
+interface Props {
+    float?: boolean;
+}
+const { float = true } = Astro.props;
 ---
 
-<header class="flex animate fly">
+<header class="flex animate fly" class:list={{ float }}>
     <div class="container flex">
         <span class="animate"><Logo /></span>
         <Navigation />
@@ -13,30 +19,31 @@ import Navigation from "./Navigation.astro";
 
 <style>
     header {
-        position: absolute;
-        inset: 0 0;
-
         height: var(--header-height);
-        z-index: 100;
 
-        background-color: transparent;
-        backdrop-filter: blur(40px);
-        transition: backdrop-filter var(--transition-duration);
         box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.125);
 
-        --base-animation-delay: 750ms;
-
         --fly-from: 0 calc(-1 * var(--header-height));
+        --base-animation-delay: 750ms;
         --animation-delay: var(--base-animation-delay);
-    }
 
-    header:hover {
-        backdrop-filter: blur(80px);
+        &.float {
+            position: absolute;
+            inset: 0 0;
+            z-index: 1;
+            background-color: transparent;
+            color: var(--color-white);
+            backdrop-filter: blur(40px);
+            transition: backdrop-filter var(--transition-duration);
+        }
+
+        &.float:hover {
+            backdrop-filter: blur(80px);
+        }
     }
 
     div {
         justify-content: space-between;
-        color: var(--color-white);
     }
 
     span.animate {
