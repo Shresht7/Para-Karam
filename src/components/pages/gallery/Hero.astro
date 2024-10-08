@@ -2,6 +2,12 @@
 // Library
 import { getImage } from "astro:assets";
 
+// Props
+interface Props {
+    height: string;
+}
+const { height = "40dvh" } = Astro.props;
+
 // Assets
 import background from "@assets/images/adventure-kit.jpg";
 
@@ -19,9 +25,9 @@ const optimizedBackgroundImage = await getImage({
     </div>
 </section>
 
-<style>
+<style define:vars={{ height }}>
     section {
-        min-height: 40dvh;
+        min-height: var(--height);
         background-color: var(--color-blue);
     }
 
@@ -29,7 +35,7 @@ const optimizedBackgroundImage = await getImage({
         height: 100%;
         display: grid;
         place-content: center;
-        padding-top: 18dvh;
+        padding-top: calc(0.5 * var(--height) - 2dvh);
     }
 
     h1 {
