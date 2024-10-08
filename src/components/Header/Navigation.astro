@@ -4,18 +4,20 @@ const routes = [
     ["Activities", "/#activities"],
     ["Gallery", "/gallery"],
     ["Contact Us", "/#contact"],
-    ["Our Team", "/our-team"]
-]
+    ["Our Team", "/our-team"],
+];
 ---
 
 <nav>
     <div id="menu-icon">&#9776;</div>
     <ul id="nav-links">
-        {routes.map(([text, route]) => (
-            <li class="animate fly">
-                <a href={route}>{text}</a>
-            </li>
-        ))}
+        {
+            routes.map(([text, route]) => (
+                <li class="animate fly">
+                    <a href={route}>{text}</a>
+                </li>
+            ))
+        }
     </ul>
 </nav>
 
@@ -28,20 +30,22 @@ const routes = [
 
         function toggleMenu() {
             if (navLinks.classList.contains("open")) {
-                navLinks.classList.remove("open")
-                menuIcon.innerHTML = "&#9776;" 
-                navElements.forEach(e => e.classList.add("animate", "fly"))
-                cta.style.display = 'block'
+                navLinks.classList.remove("open");
+                menuIcon.innerHTML = "&#9776;";
+                navElements.forEach((e) => e.classList.add("animate", "fly"));
+                cta.style.display = "block";
             } else {
-                navLinks.classList.add("open")
-                menuIcon.innerHTML = "&#10006;"
-                navElements.forEach(e => e.classList.remove("animate", "fly"))
-                cta.style.display = 'none'
+                navLinks.classList.add("open");
+                menuIcon.innerHTML = "&#10006;";
+                navElements.forEach((e) =>
+                    e.classList.remove("animate", "fly"),
+                );
+                cta.style.display = "none";
             }
         }
 
-        menuIcon.addEventListener('click', toggleMenu)
-    })
+        menuIcon.addEventListener("click", toggleMenu);
+    });
 </script>
 
 <style>
@@ -75,9 +79,9 @@ const routes = [
             flex-direction: column;
             justify-content: center;
             position: absolute;
-            top: 10dvh;
+            top: var(--header-height);
             left: 0;
-            height: 90dvh;
+            height: calc(100dvh - var(--header-height));
             width: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             display: none;
@@ -109,7 +113,8 @@ const routes = [
         border-radius: 4px;
     }
 
-    nav li:hover, nav li:has(a:focus) {
+    nav li:hover,
+    nav li:has(a:focus) {
         background-color: var(--color-white);
         color: var(--color-black);
     }
