@@ -62,14 +62,22 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         flex-direction: row;
         justify-content: center;
         align-items: start;
-        gap: 1rem;
         flex-wrap: wrap;
+        gap: 1rem;
+
         padding: 8rem 4rem;
         perspective: 2400px;
+
+        --border-radius: 32px;
+        background-color: white;
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: var(--border-radius);
+        translate: 0 -28px;
     }
 
     @media screen and (width <= 768px) {
         #gallery {
+            --border-radius: 24px;
             padding: 4rem 1.5rem;
         }
     }
