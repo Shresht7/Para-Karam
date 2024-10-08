@@ -85,11 +85,12 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     .image-wrapper {
         --x-rotation: 0;
         --y-rotation: 0;
-        box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.125);
         --fade-from: 25%;
+        --view-offset: -200px;
         transition:
             box-shadow var(--transition-duration),
             transform 50ms ease-out;
+        box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.125);
         position: relative;
     }
 
