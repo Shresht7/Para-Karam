@@ -11,6 +11,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 );
 ---
 
+<div id="selected-image-wrapper">
+    <img id="selected-image" src="" alt="" />
+</div>
+
 <div id="gallery" class="perspective-parent">
     {
         Object.entries(images).map(([x, fn]) => (
@@ -21,6 +25,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                     format="avif"
                     height={300}
                     class="img"
+                    data-src={x}
                 />
             </div>
         ))
@@ -54,9 +59,58 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             e.style.setProperty("--y-rotation", "0deg");
         });
     });
+
+    const images = document.querySelectorAll(
+        ".img",
+    ) as NodeListOf<HTMLImageElement>;
+
+    const selectedImage = document.getElementById(
+        "selected-image",
+    ) as HTMLImageElement;
+
+    images.forEach((img) => {
+        img.addEventListener("click", () => {
+            const src = img.getAttribute("data-src");
+            console.log(src);
+            if (src) {
+                selectedImage.setAttribute("src", src);
+            }
+        });
+    });
+
+    const selectedImageWrapper = document.getElementById(
+        "selected-image-wrapper",
+    ) as HTMLDivElement;
+    selectedImageWrapper.addEventListener("click", () => {
+        selectedImage.setAttribute("src", "");
+    });
+    selectedImage.addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
 </script>
 
 <style>
+    #selected-image-wrapper {
+        position: fixed;
+        inset: 0 0;
+        z-index: 1;
+        display: grid;
+        place-content: center;
+        width: 100dvw;
+        height: 100dvh;
+        background-color: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+
+        &:has(#selected-image[src=""]) {
+            display: none;
+        }
+    }
+
+    #selected-image {
+        height: 85dvh;
+        z-index: 2;
+    }
+
     #gallery {
         display: flex;
         flex-direction: row;
