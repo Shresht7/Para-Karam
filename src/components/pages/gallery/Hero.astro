@@ -28,7 +28,13 @@ const optimizedBackground = await getImage({
 
 <style define:vars={{ height }}>
     section {
-        min-height: var(--height);
+        --section-scale: 1;
+        --section-height: calc(
+            (var(--height) * var(--section-scale)) + var(--header-height)
+        );
+        --section-border-radius: 28px;
+
+        height: var(--section-height);
         background-color: white;
         background-position: center top;
         position: relative;
@@ -40,18 +46,17 @@ const optimizedBackground = await getImage({
         bottom: 0;
 
         width: 100%;
-        --border-radius: 28px;
-        height: var(--border-radius);
-        border-top-left-radius: var(--border-radius);
-        border-top-right-radius: var(--border-radius);
+        height: var(--section-border-radius);
+        border-top-left-radius: var(--section-border-radius);
+        border-top-right-radius: var(--section-border-radius);
         background-color: inherit;
     }
 
     div {
-        height: 100%;
+        height: var(--section-height);
         display: grid;
         place-content: center;
-        padding-top: calc(0.5 * var(--height) - 2dvh);
+        padding-top: calc(var(--header-height) - var(--section-border-radius));
     }
 
     h1 {
@@ -63,12 +68,8 @@ const optimizedBackground = await getImage({
 
     @media screen and (width <= 768px) {
         section {
-            min-height: calc(0.75 * var(--height));
+            --section-scale: 0.75;
             background-position: 45% 10%;
-        }
-
-        div {
-            padding-top: calc(0.35 * var(--height));
         }
 
         h1 {
