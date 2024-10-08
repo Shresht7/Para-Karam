@@ -1,6 +1,6 @@
 ---
 // Components
-import Logo from "../Logo.astro";
+import Logo from "@components/Logo.astro";
 import Navigation from "./Navigation.astro";
 ---
 
@@ -14,11 +14,9 @@ import Navigation from "./Navigation.astro";
 <style>
     header {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0 0;
 
         height: var(--header-height);
-        width: 100%;
         z-index: 100;
 
         background-color: transparent;
