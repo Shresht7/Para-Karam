@@ -32,6 +32,8 @@
 
 	--animation-duration: 250ms;
 	--transition-duration: 250ms;
+
+	--header-height: 10dvh;
 }
 
 /* ============= */
