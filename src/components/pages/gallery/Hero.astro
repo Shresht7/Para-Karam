@@ -46,4 +46,19 @@ const optimizedBackgroundImage = await getImage({
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
         z-index: 10;
     }
+
+    @media screen and (width <= 768px) {
+        section {
+            min-height: calc(0.75 * var(--height));
+            background-position: 45% 10%;
+        }
+
+        div {
+            padding-top: calc(0.35 * var(--height));
+        }
+
+        h1 {
+            font-size: var(--font-size-xxl);
+        }
+    }
 </style>
