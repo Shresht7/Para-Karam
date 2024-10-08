@@ -23,7 +23,7 @@ const optimizedCampingImage = await getImage({
 
 <style>
     section {
-        min-height: 10dvh;
+        min-height: var(--header-height);
         background-size: cover;
         color: var(--color-white);
     }
@@ -32,7 +32,7 @@ const optimizedCampingImage = await getImage({
         height: 100%;
         display: grid;
         place-content: center;
-        padding-top: 10dvh;
+        padding-top: var(--header-height);
     }
     h1 {
         font-size: calc(2 * var(--font-size-xxl));
