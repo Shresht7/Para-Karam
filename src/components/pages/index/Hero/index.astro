@@ -41,13 +41,11 @@ const optimizedBackgroundImage = await getImage({
 <script>
     import { navigate } from "astro:transitions/client";
 
-    document.addEventListener("astro:page-load", () => {
-        let bookNow = document.getElementById("book-now");
-        bookNow?.addEventListener("click", () => navigate("#contact"));
+    let bookNow = document.getElementById("book-now");
+    bookNow?.addEventListener("click", () => navigate("#contact"));
 
-        let explore = document.getElementById("explore");
-        explore?.addEventListener("click", () => navigate("#about-us"));
-    });
+    let explore = document.getElementById("explore");
+    explore?.addEventListener("click", () => navigate("#about-us"));
 </script>
 
 <!-- Photo by <a href="https://unsplash.com/@awbraga?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alex Braga</a> on <a href="https://unsplash.com/photos/a-person-is-parasailing-in-the-blue-sky-_uCIkkXC2ns?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->

@@ -22,30 +22,26 @@ const routes = [
 </nav>
 
 <script>
-    document.addEventListener("astro:page-load", () => {
-        const navLinks = document.getElementById("nav-links")!;
-        const menuIcon = document.getElementById("menu-icon")!;
-        const navElements = document.querySelectorAll("#nav-links li");
-        const cta = document.getElementById("call-to-action")!;
+    const navLinks = document.getElementById("nav-links")!;
+    const menuIcon = document.getElementById("menu-icon")!;
+    const navElements = document.querySelectorAll("#nav-links li");
+    const cta = document.getElementById("call-to-action")!;
 
-        function toggleMenu() {
-            if (navLinks.classList.contains("open")) {
-                navLinks.classList.remove("open");
-                menuIcon.innerHTML = "&#9776;";
-                navElements.forEach((e) => e.classList.add("animate", "fly"));
-                cta.style.display = "block";
-            } else {
-                navLinks.classList.add("open");
-                menuIcon.innerHTML = "&#10006;";
-                navElements.forEach((e) =>
-                    e.classList.remove("animate", "fly"),
-                );
-                cta.style.display = "none";
-            }
+    function toggleMenu() {
+        if (navLinks.classList.contains("open")) {
+            navLinks.classList.remove("open");
+            menuIcon.innerHTML = "&#9776;";
+            navElements.forEach((e) => e.classList.add("animate", "fly"));
+            cta.style.display = "block";
+        } else {
+            navLinks.classList.add("open");
+            menuIcon.innerHTML = "&#10006;";
+            navElements.forEach((e) => e.classList.remove("animate", "fly"));
+            cta.style.display = "none";
         }
+    }
 
-        menuIcon.addEventListener("click", toggleMenu);
-    });
+    menuIcon.addEventListener("click", toggleMenu);
 </script>
 
 <style>

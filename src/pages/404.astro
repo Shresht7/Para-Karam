@@ -18,13 +18,9 @@ import Footer from "../components/Footer/index.astro";
 </Layout>
 
 <script>
-    import { navigate } from "astro:transitions/client";
-
-    document.addEventListener("astro:page-load", () => {
-        const goBack = document.getElementById("go-back")!;
-        goBack.addEventListener("click", () => {
-            history.back();
-        });
+    const goBack = document.getElementById("go-back")!;
+    goBack.addEventListener("click", () => {
+        history.back();
     });
 </script>
 
