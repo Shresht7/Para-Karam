@@ -7,31 +7,29 @@
         getRandomDuration,
     } from "@utility/functions";
 
-    document.addEventListener("astro:page-load", () => {
-        const section = document.getElementById("features-animation")!;
+    const section = document.getElementById("features-animation")!;
 
-        const count = 15;
-        for (let i = 0; i <= count; i++) {
-            const li = document.createElement("li");
-            li.style.listStyle = "none";
-            li.style.display = "block";
-            li.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+    const count = 15;
+    for (let i = 0; i <= count; i++) {
+        const li = document.createElement("li");
+        li.style.listStyle = "none";
+        li.style.display = "block";
+        li.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
 
-            const size = getRandomNumber(128, 16) + "px";
-            li.style.width = size;
-            li.style.height = size;
+        const size = getRandomNumber(128, 16) + "px";
+        li.style.width = size;
+        li.style.height = size;
 
-            li.style.position = "absolute";
-            li.style.left = getRandomPercentage();
-            li.style.bottom = -1 * getRandomNumber(300, 100) + "px";
+        li.style.position = "absolute";
+        li.style.left = getRandomPercentage();
+        li.style.bottom = -1 * getRandomNumber(300, 100) + "px";
 
-            li.style.animation = "float 25s linear infinite";
-            li.style.animationDelay = getRandomDuration(30, 0, "s");
-            li.style.animationDuration = getRandomDuration(60, 15, "s");
+        li.style.animation = "float 25s linear infinite";
+        li.style.animationDelay = getRandomDuration(30, 0, "s");
+        li.style.animationDuration = getRandomDuration(60, 15, "s");
 
-            section.appendChild(li);
-        }
-    });
+        section.appendChild(li);
+    }
 </script>
 
 <style>
