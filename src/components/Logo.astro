@@ -11,12 +11,14 @@ interface Props {
     text?: boolean;
     fontSize?: string;
     iconSize?: number;
+    gap?: string;
 }
 const {
     icon = true,
     text = true,
     iconSize = 48,
     fontSize = "2rem",
+    gap = "0.5rem",
 } = Astro.props;
 ---
 
@@ -38,13 +40,13 @@ const {
     {text && <div class="name">Para-Karam</div>}
 </a>
 
-<style define:vars={{ iconSize, fontSize }}>
+<style define:vars={{ iconSize, fontSize, gap }}>
     .logo-container {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        gap: 0.5rem;
+        gap: var(--gap);
         padding-inline: 1rem;
         transition: all var(--transition-duration);
     }
