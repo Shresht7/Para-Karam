@@ -77,16 +77,18 @@ const gallery = metadata
         ".img",
     ) as NodeListOf<HTMLImageElement>;
 
+    let selectedImageIndex = -1;
+
     const selectedImage = document.getElementById(
         "selected-image",
     ) as HTMLImageElement;
 
-    images.forEach((img) => {
+    images.forEach((img, idx) => {
         img.addEventListener("click", () => {
             const src = img.getAttribute("data-src");
-            console.log(src);
             if (src) {
                 selectedImage.setAttribute("src", src);
+                selectedImageIndex = idx;
             }
         });
     });
@@ -107,6 +109,22 @@ const gallery = metadata
             switch (e.key) {
                 case "Escape":
                     selectedImage.setAttribute("src", "");
+                    break;
+                case "ArrowLeft":
+                    if (selectedImageIndex > 0) {
+                        selectedImageIndex--;
+                    }
+                    const newSrcL =
+                        images[selectedImageIndex].getAttribute("data-src");
+                    selectedImage.setAttribute("src", newSrcL ?? "");
+                    break;
+                case "ArrowRight":
+                    if (selectedImageIndex < images.length - 1) {
+                        selectedImageIndex++;
+                    }
+                    const newSrcR =
+                        images[selectedImageIndex].getAttribute("data-src");
+                    selectedImage.setAttribute("src", newSrcR ?? "");
                     break;
                 default:
             }
