@@ -26,6 +26,31 @@ const gallery = metadata
 
 <div id="selected-image-wrapper">
     <img id="selected-image" src="" alt="" />
+    <div id="close">
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <line
+                x1="3"
+                y1="3"
+                x2="21"
+                y2="21"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"></line>
+            <line
+                x1="21"
+                y1="3"
+                x2="3"
+                y2="21"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"></line>
+        </svg>
+    </div>
 </div>
 
 <div id="gallery" class="perspective-parent">
@@ -103,6 +128,11 @@ const gallery = metadata
         e.stopPropagation();
     });
 
+    const closeBtn = document.getElementById("close");
+    closeBtn?.addEventListener("click", () => {
+        selectedImage.setAttribute("src", "");
+    });
+
     // Key handler
     document.addEventListener("keydown", (e) => {
         if (!selectedImage.classList.contains("hidden")) {
@@ -147,6 +177,18 @@ const gallery = metadata
         &:has(#selected-image[src=""]) {
             display: none;
         }
+    }
+
+    #close {
+        position: absolute;
+        top: 2rem;
+        right: 3.5rem;
+        color: var(--color-white);
+        cursor: pointer;
+    }
+
+    #close:hover {
+        scale: 1.2;
     }
 
     #selected-image {
