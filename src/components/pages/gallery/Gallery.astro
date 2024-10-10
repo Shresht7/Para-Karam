@@ -2,6 +2,9 @@
 // Library
 import { Image } from "astro:assets";
 
+// Metadata
+import metadata from "@src/data/images.json";
+
 // Types
 import type { ImageMetadata } from "astro";
 
@@ -9,6 +12,16 @@ import type { ImageMetadata } from "astro";
 const images = import.meta.glob<{ default: ImageMetadata }>(
     "/src/assets/images/*.{jpeg,jpg,png,gif}",
 );
+
+// Select the images to be shown in the gallery
+const gallery = metadata
+    .filter((img) => img.gallery)
+    .map((img) => {
+        return {
+            src: img.src,
+            image: images[img.src],
+        };
+    });
 ---
 
 <div id="selected-image-wrapper">
@@ -17,15 +30,15 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 <div id="gallery" class="perspective-parent">
     {
-        Object.entries(images).map(([x, fn]) => (
+        gallery.map(({ src, image }) => (
             <div class="image-wrapper animate view-timeline perspective">
                 <Image
-                    src={fn()}
+                    src={image()}
                     alt=""
                     format="avif"
                     height={300}
                     class="img"
-                    data-src={x}
+                    data-src={src}
                 />
             </div>
         ))
