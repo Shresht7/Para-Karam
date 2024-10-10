@@ -1,0 +1,150 @@
+[
+    {
+        "src": "/src/assets/logo.png",
+        "gallery": false
+    },
+    {
+        "src": "/src/assets/images/rajneesh.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/ramesh.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/sanjay.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/sanjay2.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/sanjay3.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/scan1.png",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/scan2.png",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/scan3.png",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/scan4.png",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/scan5.png",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/scan6.png",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/scan7.png",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/scan8.png",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/adventure-kit.jpg",
+        "gallery": false
+    },
+    {
+        "src": "/src/assets/images/camping1.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/camping2.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/camping3.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/cutout1.jpg",
+        "gallery": false
+    },
+    {
+        "src": "/src/assets/images/cutout2.png",
+        "gallery": false
+    },
+    {
+        "src": "/src/assets/images/kids0.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/kids1.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/kids2.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/kids3.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/kids4.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/kids5.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/kids6.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/parachute-landing.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/paragliding1.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/paragliding2.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/paragliding3.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/parasailing1.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/parasailing2.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/parasailing3.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/sanjay-cutout.png",
+        "gallery": false
+    },
+    {
+        "src": "/src/assets/images/trekking.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/trekking2.jpg",
+        "gallery": false
+    }
+]
