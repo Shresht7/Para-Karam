@@ -22,13 +22,31 @@
 	--font-family: "Maven Pro", sans-serif;
 	--font-family-cursive: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
+	/* @link https://utopia.fyi/type/calculator?c=320,12,1.125,1240,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+	/* Step -2: 9.4815px → 10.24px */
+	--step--2: clamp(0.5926rem, 0.5761rem + 0.0824vw, 0.64rem);
+	/* Step -1: 10.6667px → 12.8px */
+	--step--1: clamp(0.6667rem, 0.6203rem + 0.2319vw, 0.8rem);
+	/* Step 0: 12px → 16px */
+	--step-0: clamp(0.75rem, 0.663rem + 0.4348vw, 1rem);
+	/* Step 1: 13.5px → 20px */
+	--step-1: clamp(0.8438rem, 0.7024rem + 0.7065vw, 1.25rem);
+	/* Step 2: 15.1875px → 25px */
+	--step-2: clamp(0.9492rem, 0.7359rem + 1.0666vw, 1.5625rem);
+	/* Step 3: 17.0859px → 31.25px */
+	--step-3: clamp(1.0679rem, 0.76rem + 1.5396vw, 1.9531rem);
+	/* Step 4: 19.2217px → 39.0625px */
+	--step-4: clamp(1.2014rem, 0.77rem + 2.1566vw, 2.4414rem);
+	/* Step 5: 21.6244px → 48.8281px */
+	--step-5: clamp(1.3515rem, 0.7601rem + 2.9569vw, 3.0518rem);
+
 	--font-size-xxs: 0.5rem;
-	--font-size-xs: 0.675rem;
-	--font-size-sm: 0.8rem;
-	--font-size: 1rem;
-	--font-size-lg: 1.25rem;
-	--font-size-xl: 1.5rem;
-	--font-size-xxl: 2rem;
+	--font-size-xs: var(--step--2);
+	--font-size-sm: var(--step--1);
+	--font-size: var(--step-0);
+	--font-size-lg: var(--step-1);
+	--font-size-xl: var(--step-2);
+	--font-size-xxl: var(--step-3);
 
 	--animation-duration: 250ms;
 	--transition-duration: 250ms;
@@ -57,6 +75,7 @@ body {
 
 body {
 	position: relative;
+	font-size: var(--font-size);
 }
 
 img,
@@ -85,7 +104,27 @@ a:hover {
 }
 
 h1 {
-	font-size: clamp(var(--font-size-xl), 5dvw + var(--font-size-xl), calc(2 * var(--font-size-xxl)));
+	font-size: var(--font-size-xxl);
+}
+
+h2 {
+	font-size: var(--font-size-xl);
+}
+
+h3 {
+	font-size: var(--font-size-lg);
+}
+
+h4 {
+	font-size: var(--font-size);
+}
+
+h5 {
+	font-size: var(--font-size-sm);
+}
+
+h6 {
+	font-size: var(--font-size-xs);
 }
 
 /* ================ */
