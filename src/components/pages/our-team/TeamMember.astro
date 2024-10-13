@@ -31,7 +31,7 @@ const { id, fullname, highlights, backgroundImage } = Astro.props;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        height: 70dvh;
+        height: clamp(50dvh, 50dvw, 75dvh);
 
         overflow: hidden;
         border-radius: 12px;

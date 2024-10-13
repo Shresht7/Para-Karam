@@ -79,15 +79,18 @@ const TEAM = [
 
 <style>
     section {
-        padding: 6rem;
+        padding-block: min(7.5dvw, 6rem);
+        padding-inline: 5dvw;
     }
 
     #team {
+        margin: 0 auto;
+        width: min(1440px, 100%);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 2rem;
+        gap: var(--fluid-size-l);
         color: var(--color-white);
     }
 
@@ -111,29 +114,14 @@ const TEAM = [
         --fly-from: 100px 0;
     }
 
-    @media screen and (width <= 768px) {
-        section {
-            padding: 4rem 0.5rem;
-        }
-
+    @media screen and (orientation: portrait) {
         #team {
             flex-direction: column;
-            padding-inline: 1rem;
-            gap: 1.5rem;
         }
 
         .animate {
             animation-duration: 500ms;
-            min-height: 25dvh;
             --fly-from: 0 50px;
-        }
-
-        ul {
-            display: none;
-        }
-
-        .rajneesh {
-            background-position-y: 0%;
         }
 
         .animate:nth-child(1) {

@@ -50,6 +50,28 @@
 	--font-size-xl: var(--step-2);
 	--font-size-xxl: var(--step-3);
 
+	/* @link https://utopia.fyi/space/calculator?c=320,14,1.2,1240,20,1.25,5,2,768&s=0.75|0.5|0.25,1.5|2|3|4|6|8,&g=s,l,xl,12 */
+	/* Space 3xs: 4px → 5px */
+	--fluid-size-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+	/* Space 2xs: 7px → 10px */
+	--fluid-size-2xs: clamp(0.4375rem, 0.3723rem + 0.3261vw, 0.625rem);
+	/* Space xs: 11px → 15px */
+	--fluid-size-xs: clamp(0.6875rem, 0.6005rem + 0.4348vw, 0.9375rem);
+	/* Space s: 14px → 20px */
+	--fluid-size-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
+	/* Space m: 21px → 30px */
+	--fluid-size-m: clamp(1.3125rem, 1.1168rem + 0.9783vw, 1.875rem);
+	/* Space l: 28px → 40px */
+	--fluid-size-l: clamp(1.75rem, 1.4891rem + 1.3043vw, 2.5rem);
+	/* Space xl: 42px → 60px */
+	--fluid-size-xl: clamp(2.625rem, 2.2337rem + 1.9565vw, 3.75rem);
+	/* Space 2xl: 56px → 80px */
+	--fluid-size-2xl: clamp(3.5rem, 2.9783rem + 2.6087vw, 5rem);
+	/* Space 3xl: 84px → 120px */
+	--fluid-size-3xl: clamp(5.25rem, 4.4674rem + 3.913vw, 7.5rem);
+	/* Space 4xl: 112px → 160px */
+	--fluid-size-4xl: clamp(7rem, 5.9565rem + 5.2174vw, 10rem);
+
 	--animation-duration: 250ms;
 	--transition-duration: 250ms;
 
