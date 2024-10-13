@@ -1,21 +1,4 @@
----
-// Library
-import { getImage } from "astro:assets";
-
-// Assets
-import camping from "@assets/images/camping1.jpg";
-
-const optimizedCampingImage = await getImage({
-    src: camping,
-    width: 768,
-    loading: "eager",
-    format: "avif",
-    fallbackFormat: "webp",
-    quality: "mid",
-});
----
-
-<section style={{ backgroundImage: `url("${optimizedCampingImage.src}")` }}>
+<section>
     <div class="container">
         <h1>OUR TEAM</h1>
     </div>
@@ -23,29 +6,48 @@ const optimizedCampingImage = await getImage({
 
 <style>
     section {
-        min-height: var(--header-height);
-        background-size: cover;
+        --height: 25dvh;
+        --section-scale: 1;
+        --section-height: calc(
+            (var(--height) * var(--section-scale)) + var(--header-height)
+        );
+        --section-border-radius: 28px;
+        height: var(--section-height);
+
+        background-image: var(--gradient-2);
+        background-color: white;
         color: var(--color-white);
+
+        position: relative;
+    }
+    section::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: var(--section-border-radius);
+        border-top-left-radius: var(--section-border-radius);
+        border-top-right-radius: var(--section-border-radius);
+        background-color: inherit;
     }
 
     div {
-        height: 100%;
+        height: var(--section-height);
         display: grid;
         place-content: center;
-        padding-top: var(--header-height);
+        padding-top: calc(var(--header-height) - var(--section-border-radius));
     }
     h1 {
         font-size: calc(2 * var(--font-size-xxl));
-        padding-block: 2rem;
+        color: var(--color-white);
+        text-transform: uppercase;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
     }
 
     @media screen and (width <= 768px) {
         section {
-            background-position-y: 0%;
-        }
-
-        h1 {
-            padding-block: 0.5rem;
+            --section-scale: 0.75;
         }
     }
 </style>
