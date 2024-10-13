@@ -108,6 +108,14 @@
         "gallery": true
     },
     {
+        "src": "/src/assets/images/airshow.jpg",
+        "gallery": true
+    },
+    {
+        "src": "/src/assets/images/parachute-group.jpg",
+        "gallery": true
+    },
+    {
         "src": "/src/assets/images/parachute-landing.jpg",
         "gallery": true
     },
