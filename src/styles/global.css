@@ -22,23 +22,23 @@
 	--font-family: "Maven Pro", sans-serif;
 	--font-family-cursive: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-	/* @link https://utopia.fyi/type/calculator?c=320,12,1.125,1240,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-	/* Step -2: 9.4815px → 10.24px */
-	--step--2: clamp(0.5926rem, 0.5761rem + 0.0824vw, 0.64rem);
-	/* Step -1: 10.6667px → 12.8px */
-	--step--1: clamp(0.6667rem, 0.6203rem + 0.2319vw, 0.8rem);
-	/* Step 0: 12px → 16px */
-	--step-0: clamp(0.75rem, 0.663rem + 0.4348vw, 1rem);
-	/* Step 1: 13.5px → 20px */
-	--step-1: clamp(0.8438rem, 0.7024rem + 0.7065vw, 1.25rem);
-	/* Step 2: 15.1875px → 25px */
-	--step-2: clamp(0.9492rem, 0.7359rem + 1.0666vw, 1.5625rem);
-	/* Step 3: 17.0859px → 31.25px */
-	--step-3: clamp(1.0679rem, 0.76rem + 1.5396vw, 1.9531rem);
-	/* Step 4: 19.2217px → 39.0625px */
-	--step-4: clamp(1.2014rem, 0.77rem + 2.1566vw, 2.4414rem);
-	/* Step 5: 21.6244px → 48.8281px */
-	--step-5: clamp(1.3515rem, 0.7601rem + 2.9569vw, 3.0518rem);
+	/* @link https://utopia.fyi/type/calculator?c=320,14,1.125,1240,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+	/* Step -2: 11.0617px → 11.52px */
+	--step--2: clamp(0.6914rem, 0.6814rem + 0.0498vw, 0.72rem);
+	/* Step -1: 12.4444px → 14.4px */
+	--step--1: clamp(0.7778rem, 0.7353rem + 0.2126vw, 0.9rem);
+	/* Step 0: 14px → 18px */
+	--step-0: clamp(0.875rem, 0.788rem + 0.4348vw, 1.125rem);
+	/* Step 1: 15.75px → 22.5px */
+	--step-1: clamp(0.9844rem, 0.8376rem + 0.7337vw, 1.4063rem);
+	/* Step 2: 17.7188px → 28.125px */
+	--step-2: clamp(1.1074rem, 0.8812rem + 1.1311vw, 1.7578rem);
+	/* Step 3: 19.9336px → 35.1563px */
+	--step-3: clamp(1.2458rem, 0.9149rem + 1.6546vw, 2.1973rem);
+	/* Step 4: 22.4253px → 43.9453px */
+	--step-4: clamp(1.4016rem, 0.9338rem + 2.3391vw, 2.7466rem);
+	/* Step 5: 25.2285px → 54.9316px */
+	--step-5: clamp(1.5768rem, 0.9311rem + 3.2286vw, 3.4332rem);
 
 	--font-size-xxs: 0.5rem;
 	--font-size-xs: var(--step--2);
