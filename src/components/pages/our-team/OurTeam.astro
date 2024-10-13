@@ -27,49 +27,61 @@ const optimizedSanjay = await getImage({
     loading: "eager",
     format: "avif",
 });
+
+const TEAM = [
+    {
+        id: "ramesh",
+        backgroundImage: optimizedRamesh,
+        fullname: "Group Captain Ramesh Mishra VM (Retd.)",
+        highlights: [
+            "Parachute Jump Instructor: 2485 Jumps from 16 aircrafts and helicopters",
+            "The first person to jump from 30,000 feet AGL with the indigenous CFF system",
+            "Adventure Sports Trainer",
+        ],
+    },
+    {
+        id: "rajneesh",
+        backgroundImage: optimizedRajneesh,
+        fullname: "Wing Commander Rajneesh Seth (Retd.)",
+        highlights: [
+            "Businessman",
+            "Supply Chain Management",
+            "Quality-Assurance Consultant",
+        ],
+    },
+    {
+        id: "sanjay",
+        backgroundImage: optimizedSanjay,
+        fullname: "Group Captain (Dr.) Sanjay Srivastav (Retd.)",
+        highlights: [
+            "Alumni of IIM Lucknow",
+            "Instructor at Indira Gandhi Rashtriya Uran Academy",
+            "AI and Data-Science Consultant",
+        ],
+    },
+];
 ---
 
 <section>
     <div id="team">
-        <div
-            class="member ramesh animate"
-            style={{ backgroundImage: `url("${optimizedRamesh.src}")` }}
-        >
-            <h2>Group Captain Ramesh Mishra VM (Retd.)</h2>
-            <ul>
-                <li>
-                    Parachute Jump Instructor: 2485 Jumps from 16 aircrafts and
-                    helicopters
-                </li>
-                <li>
-                    The first person to jump from 30,000 feet AGL with the
-                    indigenous CFF system
-                </li>
-                <li>Adventure Sports Trainer</li>
-            </ul>
-        </div>
-        <div
-            class="member rajneesh animate"
-            style={{ backgroundImage: `url("${optimizedRajneesh.src}")` }}
-        >
-            <h2>Wing Commander Rajneesh Seth (Retd.)</h2>
-            <ul>
-                <li>Businessman</li>
-                <li>Supply Chain Management</li>
-                <li>Quality-Assurance Consultant</li>
-            </ul>
-        </div>
-        <div
-            class="member sanjay animate"
-            style={{ backgroundImage: `url("${optimizedSanjay.src}")` }}
-        >
-            <h2>Group Captain (Dr.) Sanjay Srivastav (Retd.)</h2>
-            <ul>
-                <li>Alumni of IIM Lucknow</li>
-                <li>Instructor at Indira Gandhi Rashtriya Uran Academy</li>
-                <li>AI and Data-Science Consultant</li>
-            </ul>
-        </div>
+        {
+            TEAM.map((member) => (
+                <div
+                    class="member animate"
+                    data-id={member.id}
+                    style={{
+                        backgroundImage: `url("${member.backgroundImage.src}")`,
+                    }}
+                >
+                    <h2>{member.fullname}</h2>
+                    <ul>
+                        {member.highlights.map((x) => (
+                            <li>{x}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))
+        }
     </div>
 </section>
 
@@ -112,15 +124,15 @@ const optimizedSanjay = await getImage({
         scale: 1.025;
     }
 
-    .ramesh {
+    .member[data-id="ramesh"] {
         --fly-from: -100px 0;
     }
 
-    .rajneesh {
+    .member[data-id="rajneesh"] {
         --fly-from: 0 0;
     }
 
-    .sanjay {
+    .member[data-id="sanjay"] {
         background-position: 0%;
         --fly-from: 100px 0;
     }
