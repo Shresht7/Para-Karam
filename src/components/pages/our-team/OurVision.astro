@@ -1,62 +1,70 @@
 ---
+// Library
+import { getImage } from "astro:assets";
+
 // Assets
 import background from "@assets/images/paragliding3.jpg";
+
+const optimizedBackground = await getImage({
+    src: background,
+    width: 1600,
+    format: "avif",
+    quality: "mid",
+});
 ---
 
-<section>
-    <img src={background.src} alt="" decoding="async" loading="lazy" />
-    <div class="container"></div>
-    <h2 class="animate view-timeline">Our Vision</h2>
-    <ol>
-        <li class="animate view-timeline">
-            To inspire and empower youth through adventure sports, fostering
-            physical fitness, mental resilience, and a spirit of teamwork and
-            discipline.
-        </li>
-        <li class="animate view-timeline">
-            To provide safe, exciting, and educational adventure experiences
-            that promote personal growth, environmental stewardship, and a
-            life-long love for outdoor activities.
-        </li>
-        <li class="animate view-timeline">
-            To provide unique and thrilling experiences
-        </li>
-        <li class="animate view-timeline">
-            Inspiring the youth of Uttar Pradesh to join the defence services
-        </li>
-    </ol>
+<section
+    class="flex flex-col"
+    style={`background-image: url("${optimizedBackground.src}")`}
+>
+    <div class="container flex flex-col">
+        <h2 class="animate view-timeline">Our Vision</h2>
+        <ol>
+            <li class="animate view-timeline">
+                To inspire and empower youth through adventure sports, fostering
+                physical fitness, mental resilience, and a spirit of teamwork
+                and discipline.
+            </li>
+            <li class="animate view-timeline">
+                To provide safe, exciting, and educational adventure experiences
+                that promote personal growth, environmental stewardship, and a
+                life-long love for outdoor activities.
+            </li>
+            <li class="animate view-timeline">
+                To provide unique and thrilling experiences
+            </li>
+            <li class="animate view-timeline">
+                Inspiring the youth of Uttar Pradesh to join the defence
+                services
+            </li>
+        </ol>
+    </div>
 </section>
 
 <style>
     section {
-        min-height: 80dvh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        --section-height: 80dvh;
+        min-height: var(--section-height);
+        background-size: cover;
+    }
+
+    div {
+        --skew: -15deg;
+        min-height: var(--section-height);
         padding: 8rem 2rem;
         position: relative;
     }
 
-    img {
-        position: absolute;
-        inset: 0 0;
-        z-index: -1;
-    }
-
-    section::after,
-    section::before {
+    div::before {
         content: "";
         position: absolute;
         inset: 0;
-        z-index: -1;
     }
 
-    section::after {
-        width: 80%;
+    div::before {
         background-color: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(20px);
-        transform: translate(10%) skew(-15deg);
+        transform: translate(0%) skew(var(--skew));
         animation: glass-slide auto ease-out;
         animation-timeline: view();
         animation-range-start: entry;
@@ -67,12 +75,12 @@ import background from "@assets/images/paragliding3.jpg";
         from {
             background-color: transparent;
             backdrop-filter: blur(0);
-            transform: translate(-20%) skew(-15deg);
+            transform: translate(-20%) skew(var(--skew));
         }
         to {
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
-            transform: translate(10%) skew(-15deg);
+            transform: translate(0%) skew(var(--skew));
         }
     }
 
@@ -103,7 +111,6 @@ import background from "@assets/images/paragliding3.jpg";
         width: 110%;
         position: absolute;
         inset: 0 -5%;
-        z-index: -1;
         overflow: hidden;
     }
 
@@ -113,17 +120,21 @@ import background from "@assets/images/paragliding3.jpg";
 
     li:hover::before {
         background-image: linear-gradient(-15deg, var(--color-blue), #3e3e3e);
-        transform: skew(-15deg);
+        transform: skew(var(--skew));
+        z-index: -1;
     }
 
     @media screen and (width <= 768px) {
-        section {
-            min-height: auto;
+        div {
+            --skew: 0deg;
+            padding: 6rem 1rem;
         }
 
-        section::after {
-            width: 90%;
-            transform: translate(5%) skew(0deg);
+        div::before {
+            --section-width: 90%;
+            width: var(--section-width);
+            transform: translate(calc((100% - var(--section-width)) / 2))
+                skew(0deg);
             animation: none;
         }
 
