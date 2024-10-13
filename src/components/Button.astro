@@ -57,11 +57,11 @@ const color = Astro.props.color ?? "blue";
     }
 
     .small {
-        font-size: 0.8rem;
+        font-size: var(--font-size-sm);
     }
 
     .large {
-        font-size: 1.25rem;
+        font-size: var(--font-size-lg);
         padding: 0.75rem 2rem;
     }
 </style>

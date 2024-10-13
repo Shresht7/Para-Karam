@@ -47,13 +47,13 @@ import Footer from "../components/Footer/index.astro";
     }
 
     h2 {
-        font-size: 16rem;
+        font-size: calc(6 * var(--font-size-xxl));
         line-height: 1.2;
         animation-delay: 500ms;
     }
 
     p {
-        font-size: 4rem;
+        font-size: calc(3 * var(--font-size-xl));
         animation-delay: 750ms;
     }
 
@@ -61,21 +61,5 @@ import Footer from "../components/Footer/index.astro";
         animation-name: fade, fly;
         animation-delay: 1500ms;
         --fly-from: 25px 0;
-    }
-
-    @media screen and (width <= 768px) {
-        h2 {
-            font-size: 12rem;
-        }
-
-        p {
-            font-size: 2rem;
-        }
-    }
-
-    @media screen and (width <= 480px) {
-        h2 {
-            font-size: 8rem;
-        }
     }
 </style>
