@@ -161,10 +161,7 @@ h6 {
 	*,
 	*::before,
 	*::after {
-		--animation-duration: 1ms !important;
-		--transition-duration: 1ms !important;
-		animation-duration: 1ms !important;
-		animation-iteration-count: 1;
+		animation: none !important;
 		transition-duration: 1ms !important;
 		scroll-behavior: auto !important;
 	}
