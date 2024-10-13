@@ -68,8 +68,17 @@ const TEAM = [
 <section>
     <div id="team">
         {
-            TEAM.map((member) => (
-                <div class="animate" data-id={member.id}>
+            TEAM.map((member, idx) => (
+                <div
+                    class="animate"
+                    data-id={member.id}
+                    style={{
+                        "--animation-delay-base": "500ms",
+                        "--animation-delay-slope": "100ms",
+                        "--animation-delay-power": 2,
+                        "--animation-order": idx,
+                    }}
+                >
                     <TeamMember {...member} />
                 </div>
             ))
@@ -101,15 +110,15 @@ const TEAM = [
         animation-timing-function: ease-in-out;
     }
 
-    .animate[data-id="ramesh"] {
+    .animate:where([data-id="ramesh"]) {
         --fly-from: -100px 0;
     }
 
-    .animate[data-id="rajneesh"] {
+    .animate:where([data-id="rajneesh"]) {
         --fly-from: 0 0;
     }
 
-    .animate[data-id="sanjay"] {
+    .animate:where([data-id="sanjay"]) {
         background-position: 0%;
         --fly-from: 100px 0;
     }
@@ -122,18 +131,6 @@ const TEAM = [
         .animate {
             animation-duration: 500ms;
             --fly-from: 0 50px;
-        }
-
-        .animate:nth-child(1) {
-            animation-delay: 500ms;
-        }
-
-        .animate:nth-child(2) {
-            animation-delay: 650ms;
-        }
-
-        .animate:nth-child(3) {
-            animation-delay: 800ms;
         }
     }
 </style>

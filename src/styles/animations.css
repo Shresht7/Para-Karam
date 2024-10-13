@@ -5,9 +5,15 @@
 .animate {
     animation-name: var(--animation-name, fade);
     animation-duration: var(--animation-duration, 500ms);
-    animation-delay: var(--animation-delay, 0ms);
     animation-timing-function: var(--animation-timing-function, ease);
     animation-fill-mode: var(--animation-fill-mode, both);
+
+    --animation-order: 0;
+    --animation-delay-base: 0ms;
+    --animation-delay-slope: 100ms;
+    --animation-delay-power: 1;
+    --animation-delay: calc(var(--animation-delay-slope) * pow(var(--animation-order), var(--animation-delay-power)) + var(--animation-delay-base));
+    animation-delay: var(--animation-delay, 0ms);
 }
 
 .view-timeline {
@@ -73,24 +79,4 @@
 
 .blur {
     animation-name: blur;
-}
-
-.animation-stagger:nth-child(1) {
-    animation-delay: 50ms;
-}
-
-.animation-stagger:nth-child(2) {
-    animation-delay: 100ms;
-}
-
-.animation-stagger:nth-child(3) {
-    animation-delay: 150ms;
-}
-
-.animation-stagger:nth-child(4) {
-    animation-delay: 250ms;
-}
-
-.animation-stagger:nth-child(5) {
-    animation-delay: 400ms;
 }
