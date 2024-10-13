@@ -2,6 +2,9 @@
 // Library
 import { getImage } from "astro:assets";
 
+// Components
+import TeamMember from "./TeamMember.astro";
+
 // Assets
 import ramesh from "@assets/images/ramesh.jpg";
 import rajneesh from "@assets/images/rajneesh.jpg";
@@ -66,19 +69,8 @@ const TEAM = [
     <div id="team">
         {
             TEAM.map((member) => (
-                <div
-                    class="member animate"
-                    data-id={member.id}
-                    style={{
-                        backgroundImage: `url("${member.backgroundImage.src}")`,
-                    }}
-                >
-                    <h2>{member.fullname}</h2>
-                    <ul>
-                        {member.highlights.map((x) => (
-                            <li>{x}</li>
-                        ))}
-                    </ul>
+                <div class="animate" data-id={member.id}>
+                    <TeamMember {...member} />
                 </div>
             ))
         }
@@ -99,65 +91,24 @@ const TEAM = [
         color: var(--color-white);
     }
 
-    .member {
+    .animate {
         width: 100%;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: 70dvh;
-        background-color: #333;
-        border-radius: 8px;
-        background-position: center;
-        background-size: cover;
-        transition: scale 125ms ease-out;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.25);
         animation-name: fade, fly;
         animation-duration: 1000ms;
         animation-timing-function: ease-in-out;
     }
 
-    .member:hover {
-        scale: 1.025;
-    }
-
-    .member[data-id="ramesh"] {
+    .animate[data-id="ramesh"] {
         --fly-from: -100px 0;
     }
 
-    .member[data-id="rajneesh"] {
+    .animate[data-id="rajneesh"] {
         --fly-from: 0 0;
     }
 
-    .member[data-id="sanjay"] {
+    .animate[data-id="sanjay"] {
         background-position: 0%;
         --fly-from: 100px 0;
-    }
-
-    h2 {
-        width: 100%;
-        font-size: var(--font-size);
-        padding-block: 1rem;
-        text-align: center;
-        background-image: linear-gradient(#000, transparent);
-    }
-
-    ul {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 0.5rem;
-        padding-inline: 1rem;
-        list-style-type: none;
-        text-align: center;
-        background-image: linear-gradient(transparent, #000);
-        padding-bottom: 2rem;
     }
 
     @media screen and (width <= 768px) {
@@ -171,7 +122,7 @@ const TEAM = [
             gap: 1.5rem;
         }
 
-        .member {
+        .animate {
             animation-duration: 500ms;
             min-height: 25dvh;
             --fly-from: 0 50px;
@@ -185,15 +136,15 @@ const TEAM = [
             background-position-y: 0%;
         }
 
-        .member:nth-child(1) {
+        .animate:nth-child(1) {
             animation-delay: 500ms;
         }
 
-        .member:nth-child(2) {
+        .animate:nth-child(2) {
             animation-delay: 650ms;
         }
 
-        .member:nth-child(3) {
+        .animate:nth-child(3) {
             animation-delay: 800ms;
         }
     }
