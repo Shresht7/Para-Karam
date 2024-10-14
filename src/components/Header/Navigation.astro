@@ -12,8 +12,13 @@ const routes = [
     <div id="menu-icon">&#9776;</div>
     <ul id="nav-links">
         {
-            routes.map(([text, route]) => (
-                <li class="animate fly">
+            routes.map(([text, route], idx) => (
+                <li
+                    class="animate fly"
+                    style={{
+                        "--animation-order": idx + 1,
+                    }}
+                >
                     <a href={route}>{text}</a>
                 </li>
             ))
@@ -100,10 +105,13 @@ const routes = [
         list-style: none;
         cursor: pointer;
         font-weight: 600;
+
         --fly-from: 0 -100px;
-        animation-delay: 500ms;
         animation-duration: 500ms;
         animation-timing-function: ease-in-out;
+        --animation-delay-base: 500ms;
+        --animation-delay-slope: 50ms;
+
         padding: 0.125rem 0.5rem;
         border-radius: 4px;
     }
@@ -112,26 +120,6 @@ const routes = [
     nav li:has(a:focus) {
         background-color: var(--color-white);
         color: var(--color-black);
-    }
-
-    nav li:nth-child(1) {
-        animation-duration: calc(var(--base-animation-delay) + 50ms);
-    }
-
-    nav li:nth-child(2) {
-        animation-duration: calc(var(--base-animation-delay) + 100ms);
-    }
-
-    nav li:nth-child(3) {
-        animation-duration: calc(var(--base-animation-delay) + 150ms);
-    }
-
-    nav li:nth-child(4) {
-        animation-duration: calc(var(--base-animation-delay) + 250ms);
-    }
-
-    nav li:nth-child(5) {
-        animation-duration: calc(var(--base-animation-delay) + 400ms);
     }
 
     a {
