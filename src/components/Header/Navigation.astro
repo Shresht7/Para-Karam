@@ -70,28 +70,31 @@ const routes = [
         }
 
         nav ul {
+            display: none;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-around;
+
             position: absolute;
             top: var(--header-height);
             left: 0;
             height: calc(100dvh - var(--header-height));
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-            padding: 2rem;
+
+            background-image: var(--gradient-2);
         }
 
         nav ul.open {
-            height: 100dvh;
             display: flex;
-            justify-content: space-evenly;
+            padding-inline: var(--fluid-size-m);
+            gap: 0.5rem;
         }
 
         nav li {
+            height: 100%;
             width: 100%;
-            text-align: center;
-            font-size: var(--font-size-lg);
+            display: grid;
+            place-items: center;
+            font-size: var(--font-size-xl);
         }
     }
 
