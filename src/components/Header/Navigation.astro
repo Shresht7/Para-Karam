@@ -51,23 +51,17 @@ const routes = [
 
 <style>
     nav ul {
+        width: 40dvw;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 3rem;
     }
 
     #menu-icon {
         display: none;
         font-size: var(--font-size-xl);
         cursor: pointer;
-    }
-
-    @media screen and (width <= 1200px) {
-        nav ul {
-            gap: 1rem;
-        }
     }
 
     @media screen and (width <= 900px) {
@@ -85,13 +79,13 @@ const routes = [
             width: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             display: none;
-            gap: 2rem;
             padding: 2rem;
         }
 
         nav ul.open {
+            height: 100dvh;
             display: flex;
-            gap: 4rem;
+            justify-content: space-evenly;
         }
 
         nav li {
