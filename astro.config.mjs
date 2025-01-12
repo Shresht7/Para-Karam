@@ -3,13 +3,12 @@ import { defineConfig } from 'astro/config';
 import sitemap from "@astrojs/sitemap";
 import { VitePWA } from 'vite-plugin-pwa';
 
-import site from "@src/data/metadata.json";
 import { manifest } from '@src/utility/manifest';
 import { seoConfig } from '@src/utility/seoConfig';
 
 // https://astro.build/config
 export default defineConfig({
-    site: site.baseURL,
+    site: seoConfig.baseURL,
     integrations: [sitemap()],
     vite: {
         plugins: [
