@@ -28,30 +28,33 @@ import "@styles/utility.css";
 
 <!doctype html>
 <html lang="en">
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="generator" content={Astro.generator} />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
 
-	<meta name="title" content={title} />
-	<meta name="description" content={description} />
-	<link rel="icon" type="image/png" href="/logo.png" />
-	<!-- <meta name="author" content={author} /> -->
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/png" href="/logo.png" />
+		<!-- <meta name="author" content={author} /> -->
 
-	<meta property="og:url" content={Astro.url} />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
-	<meta property="og:image" content={new URL(ogImage, Astro.url)} />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(ogImage, Astro.url)} />
 
-	<meta name="twitter:url" content={Astro.url} />
-	<meta name="twitter:title" content={title} />
-	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content={new URL(ogImage, Astro.url)} />
-	<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={Astro.url} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(ogImage, Astro.url)} />
+		<meta name="twitter:card" content="summary_large_image" />
 
-	<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="manifest" href="manifest.webmanifest" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 
-	<title>{title}</title>
+		<title>{title}</title>
+	</head>
 
 	<body>
 		<ScrollProgressBar />
