@@ -36,6 +36,9 @@ const optimizedBackgroundImage = await getImage({
         </div>
         <div></div>
     </div>
+    <div id="install-button-cta">
+        <Button id="install-button" color="white">Install App</Button>
+    </div>
 </section>
 
 <script>
@@ -46,6 +49,11 @@ const optimizedBackgroundImage = await getImage({
 
     let explore = document.getElementById("explore");
     explore?.addEventListener("click", () => navigate("#about-us"));
+
+    let install = document.getElementById("install-button");
+    install?.addEventListener("click", () =>
+        dispatchEvent(new Event("showinstallprompt")),
+    );
 </script>
 
 <!-- Photo by <a href="https://unsplash.com/@awbraga?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alex Braga</a> on <a href="https://unsplash.com/photos/a-person-is-parasailing-in-the-blue-sky-_uCIkkXC2ns?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
@@ -118,5 +126,14 @@ const optimizedBackgroundImage = await getImage({
         #hero-container > div:last-child {
             flex: 0;
         }
+    }
+
+    #install-button-cta {
+        position: absolute;
+        top: calc(100dvh - 4rem);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>

@@ -50,7 +50,7 @@ import "@styles/utility.css";
 		<meta name="twitter:image" content={new URL(ogImage, Astro.url)} />
 		<meta name="twitter:card" content="summary_large_image" />
 
-		<link rel="manifest" href="manifest.webmanifest" />
+		<link rel="manifest" href="/manifest.webmanifest" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
 		<title>{title}</title>
@@ -60,4 +60,21 @@ import "@styles/utility.css";
 		<ScrollProgressBar />
 		<slot />
 	</body>
+
+	<script>
+		type PromptEvent = Event & { prompt: () => void };
+
+		/** Stores the install-prompt event for later */
+		let deferredInstallPrompt: PromptEvent;
+
+		// Stash the install-prompt event for when we dispatch our custom event
+		addEventListener("beforeinstallprompt", (e) => {
+			deferredInstallPrompt = e as PromptEvent;
+		});
+
+		// Call the install-prompt event on a custom event call
+		addEventListener("showinstallprompt", () => {
+			deferredInstallPrompt.prompt();
+		});
+	</script>
 </html>
