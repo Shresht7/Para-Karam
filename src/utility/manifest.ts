@@ -14,7 +14,7 @@ export const manifest: Partial<ManifestOptions> = {
     description: data.description,
     theme_color: data.themeColor,
     background_color: data.backgroundColor,
-    display: "minimal-ui",
+    display: "standalone",
     icons: [
         {
             src: "/logo.png",
