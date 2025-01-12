@@ -50,7 +50,14 @@ const optimizedBackgroundImage = await getImage({
     let explore = document.getElementById("explore");
     explore?.addEventListener("click", () => navigate("#about-us"));
 
-    let install = document.getElementById("install-button");
+    let install = document.getElementById("install-button-cta");
+
+    addEventListener("showinstallbutton", () => {
+        console.log("Show Install Button");
+        install!.style.opacity = "1";
+        install!.style.translate = "0 0";
+    });
+
     install?.addEventListener("click", () =>
         dispatchEvent(new Event("showinstallprompt")),
     );
@@ -130,10 +137,15 @@ const optimizedBackgroundImage = await getImage({
 
     #install-button-cta {
         position: absolute;
-        top: calc(100dvh - 4rem);
+        top: calc(100dvh - 5rem);
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: 0;
+        translate: 0 +50px;
+        transition:
+            opacity 250ms ease-in,
+            translate 250ms ease-in;
     }
 </style>

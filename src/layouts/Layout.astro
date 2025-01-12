@@ -70,6 +70,7 @@ import "@styles/utility.css";
 		// Stash the install-prompt event for when we dispatch our custom event
 		addEventListener("beforeinstallprompt", (e) => {
 			deferredInstallPrompt = e as PromptEvent;
+			dispatchEvent(new Event("showinstallbutton"));
 		});
 
 		// Call the install-prompt event on a custom event call
