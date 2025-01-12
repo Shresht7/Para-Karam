@@ -3,8 +3,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from "@astrojs/sitemap";
 import { VitePWA } from 'vite-plugin-pwa';
 
-import { manifest } from '@src/utility/manifest';
-import { seoConfig } from '@src/utility/seoConfig';
+import { manifest } from './src/utility/manifest';
+import { seoConfig } from './src/utility/seoConfig';
 
 // https://astro.build/config
 export default defineConfig({

@@ -1,5 +1,5 @@
 // Metadata
-import data from "@src/data/metadata.json";
+import data from "../data/metadata";
 
 /**
  * Defines the default SEO configuration for the website.

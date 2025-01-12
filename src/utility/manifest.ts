@@ -1,11 +1,12 @@
 // Data
-import data from "@src/data/metadata.json";
+import data from "../data/metadata";
 
 // Type imports
 import type { ManifestOptions } from "vite-plugin-pwa"
 
 /**
  * Defines the configuration for PWA webmanifest.
+ * @type {Partial<ManifestOptions>}
  */
 export const manifest: Partial<ManifestOptions> = {
     name: data.title,
